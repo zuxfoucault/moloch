@@ -1,6 +1,6 @@
 MAKEFLAGS  := -j 1
-INS         = source/beamerthememoloch.ins
-PACKAGE_SRC = $(wildcard source/*.dtx)
+INS         = src/beamerthememoloch.ins
+PACKAGE_SRC = $(wildcard src/*.dtx)
 PACKAGE_STY = $(notdir $(PACKAGE_SRC:%.dtx=%.sty))
 DEMO_SRC    = demo/demo.tex demo/demo.bib
 DEMO_PDF    = demo/demo.pdf
@@ -15,7 +15,7 @@ DOC_DIR      = $(DESTDIR)/doc/latex/moloch
 CACHE_DIR   := $(shell pwd)/.latex-cache
 
 COMPILE_TEX := latexmk -xelatex -output-directory=$(CACHE_DIR)
-export TEXINPUTS:=$(shell pwd):$(shell pwd)/source:${TEXINPUTS}
+export TEXINPUTS:=$(shell pwd):$(shell pwd)/src:${TEXINPUTS}
 
 DOCKER_IMAGE = latex-image
 DOCKER_CONTAINER = latex-container

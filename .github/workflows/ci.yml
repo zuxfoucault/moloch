@@ -1,0 +1,12 @@
+name: Test Beamer Theme
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: xu-cheng/latex-action@v3
+        with:
+          root_file: demo/demo.tex
+      - name: Compile LaTeX document
+        run: latexmk -pdf -interaction=nonstopmode -halt-on-error test.tex
