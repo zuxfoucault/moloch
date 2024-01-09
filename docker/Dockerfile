@@ -8,9 +8,9 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -q
 RUN apt-get install -qy texlive-full
 RUN apt-get install -qy \
-            gnuplot \
-            wget \
-            build-essential
+  gnuplot \
+  wget \
+  build-essential
 
 ADD ./getFiraFont.sh ./getFiraFont.sh
 RUN ./getFiraFont.sh

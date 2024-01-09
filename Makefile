@@ -1,17 +1,17 @@
 MAKEFLAGS  := -j 1
-INS         = source/beamerthememetropolis.ins
+INS         = source/beamerthememoloch.ins
 PACKAGE_SRC = $(wildcard source/*.dtx)
 PACKAGE_STY = $(notdir $(PACKAGE_SRC:%.dtx=%.sty))
 DEMO_SRC    = demo/demo.tex demo/demo.bib
 DEMO_PDF    = demo/demo.pdf
-DOC_SRC     = doc/metropolistheme.dtx
-DOC_PDF     = doc/metropolistheme.pdf
+DOC_SRC     = doc/molochtheme.dtx
+DOC_PDF     = doc/molochtheme.pdf
 
 CTAN_CONTENT = README.md $(INS) $(PACKAGE_SRC) $(DOC_SRC) $(DOC_PDF) $(DEMO_SRC) $(DEMO_PDF)
 
 DESTDIR     ?= $(shell kpsewhich -var-value=TEXMFHOME)
-INSTALL_DIR  = $(DESTDIR)/tex/latex/metropolis
-DOC_DIR      = $(DESTDIR)/doc/latex/metropolis
+INSTALL_DIR  = $(DESTDIR)/tex/latex/moloch
+DOC_DIR      = $(DESTDIR)/doc/latex/moloch
 CACHE_DIR   := $(shell pwd)/.latex-cache
 
 COMPILE_TEX := latexmk -xelatex -output-directory=$(CACHE_DIR)
@@ -51,7 +51,7 @@ clean-sty:
 	@rm -f $(PACKAGE_STY)
 
 ctan: $(CTAN_CONTENT) ctan-version
-	@tar --transform "s@\(.*\)@metropolis/\1@" -cf metropolis-$(shell date "+%Y-%m-%d").tar.gz $(CTAN_CONTENT)
+	@tar --transform "s@\(.*\)@moloch/\1@" -cf moloch-$(shell date "+%Y-%m-%d").tar.gz $(CTAN_CONTENT)
 
 ctan-version:
 	@sed -i 's@20[0-9][0-9]/[0-9]*/[0-9]*@$(shell date "+%Y/%m/%d")@' $(PACKAGE_SRC)
