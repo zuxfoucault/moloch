@@ -1,12 +1,26 @@
-name: Test Beamer Theme
-on: [push]
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: xu-cheng/latex-action@v3
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Set up TeX Live
+        uses: latex-actions/setup-texlive@v1
         with:
-          root_file: demo/demo.tex
-      - name: Compile LaTeX document
-        run: latexmk -pdf -interaction=nonstopmode -halt-on-error test.tex
+          texlive-version: 2022
+          scheme: full
+      - name: Install l3build
+        run: tlmgr install l3build
+      - name: Build and test LaTeX package
+        run: |
+          l3build check
+          l3build doc
+          l3build install
