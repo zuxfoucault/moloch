@@ -335,9 +335,9 @@
 \newlength{\moloch@progressonsectionpage@linewidth}
 \setlength{\moloch@progressonsectionpage@linewidth}{0.4pt}
 \setbeamertemplate{progress bar in section page}{
-  \setlength{\moloch@progressonsectionpage}{%
-    \textwidth * \ratio{\insertframenumber pt}{\inserttotalframenumber pt}%
-  }%
+  \pgfmathsetlength{\metropolis@progressonsectionpage}{%
+    \textwidth * min(1,\insertframenumber/\inserttotalframenumber%
+  }
   \tikzexternaldisable%
   \begin{tikzpicture}
     \fill[bg] (0,0) rectangle (\textwidth, \moloch@progressonsectionpage@linewidth);
