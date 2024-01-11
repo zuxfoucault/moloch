@@ -12,8 +12,7 @@
 % \iffalse
 %<*package>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerthememoloch}
-  [2017/01/23 v1.2 Moloch Beamer theme]
+\ProvidesPackage{beamerthememoloch}[2017/01/23 v1.2 Moloch Beamer theme]
 %</package>
 % \fi
 % \CheckSum{0}
@@ -46,11 +45,11 @@
 %    \begin{macrocode}
 \pgfkeys{/moloch/.cd,
   .search also={
-    /moloch/inner,
-    /moloch/outer,
-    /moloch/color,
-    /moloch/font,
-  }
+      /moloch/inner,
+      /moloch/outer,
+      /moloch/color,
+      /moloch/font,
+    }
 }
 %    \end{macrocode}
 %
@@ -59,23 +58,23 @@
 %    \begin{macrocode}
 \pgfkeys{
   /moloch/titleformat plain/.cd,
-    .is choice,
-    regular/.code={%
+  .is choice,
+  regular/.code={%
       \let\moloch@plaintitleformat\@empty%
       \setbeamerfont{standout}{shape=\normalfont}%
     },
-    smallcaps/.code={%
+  smallcaps/.code={%
       \let\moloch@plaintitleformat\@empty%
       \setbeamerfont{standout}{shape=\scshape}%
     },
-    allsmallcaps/.code={%
+  allsmallcaps/.code={%
       \let\moloch@plaintitleformat\MakeLowercase%
       \setbeamerfont{standout}{shape=\scshape}%
       \PackageWarning{beamerthememoloch}{%
         Be aware that titleformat plain=allsmallcaps can lead to problems%
       }
     },
-    allcaps/.code={%
+  allcaps/.code={%
       \let\moloch@plaintitleformat\MakeUppercase%
       \setbeamerfont{standout}{shape=\normalfont}%
       \PackageWarning{beamerthememoloch}{%
@@ -92,12 +91,12 @@
 %    \begin{macrocode}
 \pgfkeys{
   /moloch/titleformat/.code=\pgfkeysalso{
-      font/titleformat title=#1,
-      font/titleformat subtitle=#1,
-      font/titleformat section=#1,
-      font/titleformat frame=#1,
-      titleformat plain=#1,
-    }
+    font/titleformat title=#1,
+    font/titleformat subtitle=#1,
+    font/titleformat section=#1,
+    font/titleformat frame=#1,
+    titleformat plain=#1,
+  }
 }
 %    \end{macrocode}
 % \end{macro}
@@ -112,7 +111,6 @@
   usetotalslideindicator/.code=\pgfkeysalso{outer/numbering=fraction},
   nosectionslide/.code=\pgfkeysalso{inner/sectionpage=none},
   darkcolors/.code=\pgfkeysalso{color/background=dark},
-  blockbg/.code=\pgfkeysalso{color/block=fill, inner/block=fill},
 }
 %    \end{macrocode}
 %
