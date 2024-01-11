@@ -55,12 +55,12 @@
 %    \begin{macrocode}
 \pgfkeys{
   /moloch/inner/sectionpage/.cd,
-    .is choice,
-    none/.code=\moloch@disablesectionpage,
-    simple/.code={\moloch@enablesectionpage
-                  \setbeamertemplate{section page}[simple]},
-    progressbar/.code={\moloch@enablesectionpage
-                       \setbeamertemplate{section page}[progressbar]},
+  .is choice,
+  none/.code=\moloch@disablesectionpage,
+  simple/.code={\moloch@enablesectionpage
+      \setbeamertemplate{section page}[simple]},
+  progressbar/.code={\moloch@enablesectionpage
+      \setbeamertemplate{section page}[progressbar]},
 }
 %    \end{macrocode}
 % \end{macro}
@@ -70,12 +70,12 @@
 %    \begin{macrocode}
 \pgfkeys{
   /moloch/inner/subsectionpage/.cd,
-    .is choice,
-    none/.code=\moloch@disablesubsectionpage,
-    simple/.code={\moloch@enablesubsectionpage
-                  \setbeamertemplate{section page}[simple]},
-    progressbar/.code={\moloch@enablesubsectionpage
-                       \setbeamertemplate{section page}[progressbar]},
+  .is choice,
+  none/.code=\moloch@disablesubsectionpage,
+  simple/.code={\moloch@enablesubsectionpage
+      \setbeamertemplate{section page}[simple]},
+  progressbar/.code={\moloch@enablesubsectionpage
+      \setbeamertemplate{section page}[progressbar]},
 }
 %    \end{macrocode}
 % \end{macro}
@@ -108,15 +108,15 @@
     \ifx\inserttitle\@empty\else\usebeamertemplate*{title}\fi
     \ifx\insertsubtitle\@empty\else\usebeamertemplate*{subtitle}\fi
     \usebeamertemplate*{title separator}
-%    \end{macrocode}
-%
-% Beamer's definition of |\insertauthor| is always nonempty, so we have
-% to test another macro initialized by |\author{...}| to see if the user has
-% defined an author. This solution was suggested by Enrico Gregorio in an
-% answer to \href{https://tex.stackexchange.com/questions/241306/}{this
-% Stack Exchange question}.
-%
-%    \begin{macrocode}
+    %    \end{macrocode}
+    %
+    % Beamer's definition of |\insertauthor| is always nonempty, so we have
+    % to test another macro initialized by |\author{...}| to see if the user has
+    % defined an author. This solution was suggested by Enrico Gregorio in an
+    % answer to \href{https://tex.stackexchange.com/questions/241306/}{this
+    % Stack Exchange question}.
+    %
+    %    \begin{macrocode}
     \ifx\beamer@shortauthor\@empty\else\usebeamertemplate*{author}\fi
     \ifx\insertdate\@empty\else\usebeamertemplate*{date}\fi
     \ifx\insertinstitute\@empty\else\usebeamertemplate*{institute}\fi
@@ -159,9 +159,9 @@
 %    \begin{macrocode}
 \setbeamertemplate{title graphic}{
   \vbox to 0pt {
-    \vspace*{2em}
-    \inserttitlegraphic%
-  }%
+      \vspace*{2em}
+      \inserttitlegraphic%
+    }%
   \nointerlineskip%
 }
 %    \end{macrocode}
@@ -384,8 +384,8 @@
   \vphantom{ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz()}%
 }
 \newcommand{\moloch@block}[1]{
-  \par\vskip\medskipamount%
-  \setlength{\parskip}{0pt}
+\par\vskip\medskipamount%
+\setlength{\parskip}{0pt}
 %    \end{macrocode}
 %
 %    If a background color is defined for the block title or body, we need to
@@ -406,11 +406,11 @@
 %    set a rightskip for a nice ragged-right block title.
 %
 %    \begin{macrocode}
-  \ifbeamercolorempty[bg]{block title#1}{%
-    \begin{beamercolorbox}[rightskip=0pt plus 4em]{block title#1}}{%
-  \ifbeamercolorempty[bg]{block title}{%
-    \begin{beamercolorbox}[rightskip=0pt plus 4em]{block title#1}%
-  }%
+\ifbeamercolorempty[bg]{block title#1}{%
+\begin{beamercolorbox}[rightskip=0pt plus 4em]{block title#1}}{%
+\ifbeamercolorempty[bg]{block title}{%
+\begin{beamercolorbox}[rightskip=0pt plus 4em]{block title#1}%
+}%
 %   \end{macrocode}
 %
 %   Otherwise, if the |block title| has a background, we set the padding based
@@ -419,56 +419,56 @@
 %   subtracting |\moloch@blockadjust| from the top and bottom padding.
 %
 %   \begin{macrocode}
-  {%
-    \begin{beamercolorbox}[
-      sep=\dimexpr\moloch@blocksep-\moloch@blockadjust\relax,
-      leftskip=\moloch@blockadjust,
-      rightskip=\dimexpr\moloch@blockadjust plus 4em\relax
-    ]{block title#1}%
+{%
+\begin{beamercolorbox}[
+    sep=\dimexpr\moloch@blocksep-\moloch@blockadjust\relax,
+    leftskip=\moloch@blockadjust,
+    rightskip=\dimexpr\moloch@blockadjust plus 4em\relax
+  ]{block title#1}%
   }}%
-%   \end{macrocode}
-%
-%   We can now set the contents of the |block title|. The zero-width but
-%   positive-height box |\moloch@strut| ensures that the block title box
-%   has a consistent height, even if it lacks punctuation, ascenders, or
-%   descenders.
-%
-%   \begin{macrocode}
-      \usebeamerfont*{block title#1}%
-      \moloch@strut%
-      \insertblocktitle%
-      \moloch@strut%
-  \end{beamercolorbox}%
+  %   \end{macrocode}
+  %
+  %   We can now set the contents of the |block title|. The zero-width but
+  %   positive-height box |\moloch@strut| ensures that the block title box
+  %   has a consistent height, even if it lacks punctuation, ascenders, or
+  %   descenders.
+  %
+  %   \begin{macrocode}
+  \usebeamerfont*{block title#1}%
+  \moloch@strut%
+  \insertblocktitle%
+  \moloch@strut%
+\end{beamercolorbox}%
 %   \end{macrocode}
 %
 %   Next, we typeset the |block body|. This the code is similar to, but simpler
 %   than, the |block title| code since we don't need to adjust for any struts.
 %
 %   \begin{macrocode}
-  \nointerlineskip%
-  \ifbeamercolorempty[bg]{block body#1}{%
-    \begin{beamercolorbox}[vmode]{block body#1}}{
-  \ifbeamercolorempty[bg]{block body}{%
-    \begin{beamercolorbox}[vmode]{block body#1}%
-  }{%
-    \begin{beamercolorbox}[sep=\moloch@blocksep, vmode]{block body#1}%
-    \vspace{-\moloch@parskip}
-  }}%
-      \usebeamerfont{block body#1}%
-      \setlength{\parskip}{\moloch@parskip}%
-}
-%    \end{macrocode}
-%
-%    This concludes the auxiliary macro |\moloch@block|. Finally,
-%    we define the block beamer templates using this macro.
-%
-%    \begin{macrocode}
-\setbeamertemplate{block begin}{\moloch@block{}}
-\setbeamertemplate{block alerted begin}{\moloch@block{ alerted}}
-\setbeamertemplate{block example begin}{\moloch@block{ example}}
-\setbeamertemplate{block end}{\end{beamercolorbox}\vspace*{0.2ex}}
-\setbeamertemplate{block alerted end}{\end{beamercolorbox}\vspace*{0.2ex}}
-\setbeamertemplate{block example end}{\end{beamercolorbox}\vspace*{0.2ex}}
+\nointerlineskip%
+\ifbeamercolorempty[bg]{block body#1}{%
+  \begin{beamercolorbox}[vmode]{block body#1}}{
+    \ifbeamercolorempty[bg]{block body}{%
+      \begin{beamercolorbox}[vmode]{block body#1}%
+        }{%
+        \begin{beamercolorbox}[sep=\moloch@blocksep, vmode]{block body#1}%
+          \vspace{-\moloch@parskip}
+          }}%
+          \usebeamerfont{block body#1}%
+          \setlength{\parskip}{\moloch@parskip}%
+          }
+          %    \end{macrocode}
+          %
+          %    This concludes the auxiliary macro |\moloch@block|. Finally,
+          %    we define the block beamer templates using this macro.
+          %
+          %    \begin{macrocode}
+          \setbeamertemplate{block begin}{\moloch@block{}}
+          \setbeamertemplate{block alerted begin}{\moloch@block{ alerted}}
+          \setbeamertemplate{block example begin}{\moloch@block{ example}}
+          \setbeamertemplate{block end}{\end{beamercolorbox}\vspace*{0.2ex}}
+        \setbeamertemplate{block alerted end}{\end{beamercolorbox}\vspace*{0.2ex}}
+    \setbeamertemplate{block example end}{\end{beamercolorbox}\vspace*{0.2ex}}
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
@@ -543,23 +543,23 @@
 \define@key{beamerframe}{standout}[true]{%
   \booltrue{moloch@standout}
   \begingroup
-    \setkeys{beamerframe}{c}
-    \setkeys{beamerframe}{noframenumbering}
-    \ifbeamercolorempty[bg]{palette primary}{
-      \setbeamercolor{background canvas}{
-        use=palette primary,
-        bg=-palette primary.fg
-      }
-    }{
-      \setbeamercolor{background canvas}{
-        use=palette primary,
-        bg=palette primary.bg
-      }
+  \setkeys{beamerframe}{c}
+  \setkeys{beamerframe}{noframenumbering}
+  \ifbeamercolorempty[bg]{palette primary}{
+    \setbeamercolor{background canvas}{
+      use=palette primary,
+      bg=-palette primary.fg
     }
-    \setbeamercolor{local structure}{
-      fg=palette primary.fg
+  }{
+    \setbeamercolor{background canvas}{
+      use=palette primary,
+      bg=palette primary.bg
     }
-    \usebeamercolor[fg]{palette primary}
+  }
+  \setbeamercolor{local structure}{
+    fg=palette primary.fg
+  }
+  \usebeamercolor[fg]{palette primary}
 }
 %    \end{macrocode}
 %
@@ -571,12 +571,12 @@
 %    exactly once at the end of each slide.
 %
 %    \begin{macrocode}
-  \pretocmd{\beamer@reseteecodes}{%
-    \ifbool{moloch@standout}{
-      \endgroup
-      \boolfalse{moloch@standout}
-    }{}
-  }{}{}
+\pretocmd{\beamer@reseteecodes}{%
+  \ifbool{moloch@standout}{
+    \endgroup
+    \boolfalse{moloch@standout}
+  }{}
+}{}{}
 %    \end{macrocode}
 %
 %    We set the fonts and the \centering alignment on the inner content,
@@ -584,12 +584,12 @@
 %    formatting.
 %
 %    \begin{macrocode}
-  \AtBeginEnvironment{beamer@frameslide}{
-    \ifbool{moloch@standout}{
-      \centering
-      \usebeamerfont{standout}
-    }{}
-  }
+\AtBeginEnvironment{beamer@frameslide}{
+  \ifbool{moloch@standout}{
+    \centering
+    \usebeamerfont{standout}
+  }{}
+}
 %    \end{macrocode}
 % \end{macro}
 %
