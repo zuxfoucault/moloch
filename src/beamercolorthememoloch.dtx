@@ -40,9 +40,9 @@
 %    \begin{macrocode}
 \pgfkeys{
   /moloch/color/block/.cd,
-    .is choice,
-    transparent/.code=\moloch@block@transparent,
-    fill/.code=\moloch@block@fill,
+  .is choice,
+  transparent/.code=\moloch@block@transparent,
+  fill/.code=\moloch@block@fill,
 }
 %    \end{macrocode}
 % \end{macro}
@@ -53,9 +53,9 @@
 %    \begin{macrocode}
 \pgfkeys{
   /moloch/color/background/.cd,
-    .is choice,
-    dark/.code=\moloch@colors@dark,
-    light/.code=\moloch@colors@light,
+  .is choice,
+  dark/.code=\moloch@colors@dark,
+  light/.code=\moloch@colors@light,
 }
 %    \end{macrocode}
 % \end{macro}
@@ -201,17 +201,15 @@
   }
 }
 \setbeamercolor{block title alerted}{%
-    use={block title, alerted text},
-    bg=block title.bg,
-    fg=alerted text.fg
+  use={block title, alerted text},
+  fg=alerted text.fg
 }
 \setbeamercolor{block title example}{%
-    use={block title, example text},
-    bg=block title.bg,
-    fg=example text.fg
+  use={block title, example text},
+  fg=example text.fg
 }
-\setbeamercolor{block body alerted}{use=block body, parent=block body}
-\setbeamercolor{block body example}{use=block body, parent=block body}
+% \setbeamercolor{block body alerted}{use=block body, parent=block body}
+% \setbeamercolor{block body example}{use=block body, parent=block body}
 %    \end{macrocode}
 %
 % Footnotes

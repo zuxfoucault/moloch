@@ -191,14 +191,14 @@
 \setlength{\moloch@progressinheadfoot@linewidth}{0.4pt}
 \setbeamertemplate{progress bar in head/foot}{
   \nointerlineskip
-  \pgfmathsetlength{\metropolis@progressinheadfoot}{\paperwidth * min(1,\insertframenumber/\inserttotalframenumber}
+  \pgfmathsetlength{\moloch@progressinheadfoot}{\paperwidth * min(1,\insertframenumber/\inserttotalframenumber)}
   \begin{beamercolorbox}[wd=\paperwidth]{progress bar in head/foot}
-    \tikzexternaldisable%
+    \tikzexternaldisable
     \begin{tikzpicture}
       \fill[bg] (0,0) rectangle (\paperwidth, \moloch@progressinheadfoot@linewidth);
       \fill[fg] (0,0) rectangle (\moloch@progressinheadfoot, \moloch@progressinheadfoot@linewidth);
-    \end{tikzpicture}%
-    \tikzexternalenable%
+    \end{tikzpicture}
+    \tikzexternalenable
   \end{beamercolorbox}
 }
 %    \end{macrocode}
