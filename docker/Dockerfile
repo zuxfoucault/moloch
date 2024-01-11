@@ -12,8 +12,5 @@ RUN apt-get install -qy \
   wget \
   build-essential
 
-ADD ./getFiraFont.sh ./getFiraFont.sh
-RUN ./getFiraFont.sh
-
 WORKDIR /data
 VOLUME ["/data"]
