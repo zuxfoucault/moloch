@@ -2,20 +2,25 @@
 
 module = "moloch"
 
--- sourcefiledir  = "src"
---
--- installfiles = {"*.sty"}
--- sourcefiles  = {"src/*.dtx"}
--- typesetfiles = {"src/*.dtx"}
-
 sourcefiledir = "src"
--- docfiledir = "docs"
--- unpackfiles = { "*.dtx" }
--- -- typesetfiles = { "*.dtx", "*.tex" }
--- typesetfiles = { "moloch.dtx" }
--- installfiles = {"*.sty", "*.dtx"}
--- packtdszip = true
+typesetfiles = { "doc/moloch.tex" }
 
-typesetfiles = {"doc/moloch.tex"}
--- sourcefiles = {"src/*.dtx"}
--- docfiles = {"doc/*.tex"}
+function update_tag(file, content, tagname, tagdate)
+  if string.match(file, "%.dtx$") then
+    local pattern = "\\ProvidesPackage{(.-)}%[([^%]]-) v([^%]]-) ([^%]]-)%]"
+    return content:gsub(
+      pattern,
+      function(package_name, old_date, old_version, description)
+        return string.format(
+          "\\ProvidesPackage{%s}[%s v%s %s]",
+          package_name,
+          tagdate,
+          tagname,
+          description
+        )
+      end
+    )
+  end
+
+  return content
+end
