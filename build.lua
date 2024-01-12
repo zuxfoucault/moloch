@@ -15,7 +15,7 @@ function update_tag(file, content, tagname, tagdate)
           "\\ProvidesPackage{%s}[%s v%s %s]",
           package_name,
           tagdate,
-          tagname,
+          old_version,
           description
         )
       end
