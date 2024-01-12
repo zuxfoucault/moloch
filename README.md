@@ -2,12 +2,14 @@
 
 Moloch is a simple Beamer theme suitable for anyone to use. It is
 a fork of the [Moloch Theme](https://github.com/matze/mtheme).
-I created the fork mainly to fix some outstanding issues
-to Moloch, since the theme is no longer actively maintained.
-I also wanted to simplify some of the code, for instance no longer hard-code
-the use of the Fira Sans font and introduce subtitles for frames.
 
-Have a look at the [demo slides][] to see how the theme looks.
+The fork was created for the following reasons:
+
+- To fix some outstanding issues that had not been addressed for a long time.
+- To remove some of the more opinionated design choices, such as special handling of the Fira family of fonts.
+- To strip away some features that ad complexity to the code base without achieving valuable functionality for the majority of users, such as special code block designs and the pgfplots theme.
+
+Do not expect this theme to be backwards compatible with the Metropolis theme.
 
 ## Installation
 
