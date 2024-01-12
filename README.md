@@ -9,8 +9,6 @@ the use of the Fira Sans font and introduce subtitles for frames.
 
 Have a look at the [demo slides][] to see how the theme looks.
 
-![Sample](http://i.imgur.com/Bxu52fz.png)
-
 ## Installation
 
 Installing Moloch from source, like any Beamer theme, involves four easy
