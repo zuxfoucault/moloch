@@ -4,6 +4,8 @@ module = "moloch"
 
 sourcefiledir = "src"
 typesetfiles = { "doc/moloch.tex" }
+checkengines = { "pdftex" }
+checksuppfiles = { "*.tex" }
 
 function update_tag(file, content, tagname, tagdate)
   if string.match(file, "%.dtx$") then
