@@ -146,18 +146,6 @@
 \usefonttheme{moloch}
 %    \end{macrocode}
 %
-% The |tol| theme for |pgfplots| is only loaded if |pgfplots| is used.
-%
-%    \begin{macrocode}
-\AtEndPreamble{%
-  \@ifpackageloaded{pgfplots}{%
-    \RequirePackage{pgfplotsthemetol}
-  }{}
-}
-%    \end{macrocode}
-%
-%
-%
 % \subsubsection{Custom commands}
 %
 % The parent theme defines custom commands as their proper usage may depend
