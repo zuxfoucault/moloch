@@ -11,18 +11,10 @@ Have a look at the [demo slides][] to see how the theme looks.
 
 ## Installation
 
-Installing Moloch from source, like any Beamer theme, involves four easy
-steps:
+A CTAN release is planned, but for now you can install the theme manually from source. You need a working LaTeX installation with `l3build` installed. Then just follow these steps:
 
-1. **Download the source** with a `git clone` of the [repository](https://github.com/jolars/moloch).
-2. **Compile the style files** by running `make sty` inside the downloaded
-   directory. (Or run LaTeX directly on `source/molochtheme.ins`.)
-3. **Move the resulting `*.sty` files** to the folder containing your
-   presentation. To use Moloch with many presentations, run `make install`
-   or move the `*.sty` files to a folder in your TeX path instead (might require
-   `sudo` rights).
-4. **Use the theme for your presentation** by declaring `\usetheme{moloch}` in
-   the preamble of your Beamer document.
+1. Clone the repository: `git clone https://github.com/jolars/moloch.git`
+2. Install the package: `l3build install`
 
 ## Usage
 
