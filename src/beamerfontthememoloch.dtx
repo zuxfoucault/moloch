@@ -12,7 +12,7 @@
 % \iffalse
 %<*package>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerfontthememoloch}[2017/01/23 Moloch font theme]
+\ProvidesPackage{beamerfontthememoloch}[2017/01/23 v0.1.0 Moloch font theme] % x-release-please-version
 %</package>
 % \fi
 % \CheckSum{0}
@@ -39,33 +39,23 @@
 % \subsubsection{General font definitions}
 %
 %    \begin{macrocode}
-\setbeamerfont{title}{size=\Large,%
-                      series=\bfseries}
+\setbeamerfont{title}{size=\Large, series=\bfseries}
 \setbeamerfont{author}{size=\small}
 \setbeamerfont{date}{size=\small}
-\setbeamerfont{section title}{size=\Large,%
-                              series=\bfseries}
-\setbeamerfont{block title}{size=\normalsize,%
-                            series=\bfseries}
-\setbeamerfont{block title alerted}{size=\normalsize,%
-                                    series=\bfseries}
+\setbeamerfont{section title}{size=\Large, series=\bfseries}
+\setbeamerfont{block title}{size=\normalsize, series=\bfseries}
+\setbeamerfont{block title alerted}{size=\normalsize, series=\bfseries}
 \setbeamerfont*{subtitle}{size=\large}
-\setbeamerfont{frametitle}{size=\large,%
-                           series=\bfseries}
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
 \setbeamerfont{caption}{size=\small}
 \setbeamerfont{caption name}{series=\bfseries}
 \setbeamerfont{description item}{series=\bfseries}
 \setbeamerfont{page number in head/foot}{size=\scriptsize}
-\setbeamerfont{bibliography entry author}{size=\normalsize,%
-                                          series=\normalfont}
-\setbeamerfont{bibliography entry title}{size=\normalsize,%
-                                         series=\bfseries}
-\setbeamerfont{bibliography entry location}{size=\normalsize,%
-                                            series=\normalfont}
-\setbeamerfont{bibliography entry note}{size=\small,%
-                                        series=\normalfont}
-\setbeamerfont{standout}{size=\Large,%
-                         series=\bfseries}
+\setbeamerfont{bibliography entry author}{size=\normalsize, series=\normalfont}
+\setbeamerfont{bibliography entry title}{size=\normalsize, series=\bfseries}
+\setbeamerfont{bibliography entry location}{size=\normalsize, series=\normalfont}
+\setbeamerfont{bibliography entry note}{size=\small, series=\normalfont}
+\setbeamerfont{standout}{size=\Large, series=\bfseries}
 %    \end{macrocode}
 %
 %
@@ -77,23 +67,23 @@
 %    \begin{macrocode}
 \pgfkeys{
   /moloch/font/titleformat title/.cd,
-    .is choice,
-    regular/.code={%
+  .is choice,
+  regular/.code={%
       \let\moloch@titleformat\@empty%
       \setbeamerfont{title}{shape=\normalfont}%
     },
-    smallcaps/.code={%
+  smallcaps/.code={%
       \let\moloch@titleformat\@empty%
       \setbeamerfont{title}{shape=\scshape}%
     },
-    allsmallcaps/.code={%
+  allsmallcaps/.code={%
       \let\moloch@titleformat\lowercase%
       \setbeamerfont{title}{shape=\scshape}%
       \PackageWarning{beamerthememoloch}{%
         Be aware that titleformat title=allsmallcaps can lead to problems%
       }
     },
-    allcaps/.code={%
+  allcaps/.code={%
       \let\moloch@titleformat\uppercase%
       \setbeamerfont{title}{shape=\normalfont}
       \PackageWarning{beamerthememoloch}{%
@@ -109,23 +99,23 @@
 %    \begin{macrocode}
 \pgfkeys{
   /moloch/font/titleformat subtitle/.cd,
-    .is choice,
-    regular/.code={%
+  .is choice,
+  regular/.code={%
       \let\moloch@subtitleformat\@empty%
       \setbeamerfont{subtitle}{shape=\normalfont}%
     },
-    smallcaps/.code={%
+  smallcaps/.code={%
       \let\moloch@subtitleformat\@empty%
       \setbeamerfont{subtitle}{shape=\scshape}%
     },
-    allsmallcaps/.code={%
+  allsmallcaps/.code={%
       \let\moloch@subtitleformat\lowercase%
       \setbeamerfont{subtitle}{shape=\scshape}%
       \PackageWarning{beamerthememoloch}{%
         Be aware that titleformat subtitle=allsmallcaps can lead to problems%
       }
     },
-    allcaps/.code={%
+  allcaps/.code={%
       \let\moloch@subtitleformat\uppercase%
       \setbeamerfont{subtitle}{shape=\normalfont}%
       \PackageWarning{beamerthememoloch}{%
@@ -141,23 +131,23 @@
 %    \begin{macrocode}
 \pgfkeys{
   /moloch/font/titleformat section/.cd,
-    .is choice,
-    regular/.code={%
+  .is choice,
+  regular/.code={%
       \let\moloch@sectiontitleformat\@empty%
       \setbeamerfont{section title}{shape=\normalfont}%
     },
-    smallcaps/.code={%
+  smallcaps/.code={%
       \let\moloch@sectiontitleformat\@empty%
       \setbeamerfont{section title}{shape=\scshape}%
     },
-    allsmallcaps/.code={%
+  allsmallcaps/.code={%
       \let\moloch@sectiontitleformat\MakeLowercase%
       \setbeamerfont{section title}{shape=\scshape}%
       \PackageWarning{beamerthememoloch}{%
         Be aware that titleformat section=allsmallcaps can lead to problems%
       }
     },
-    allcaps/.code={%
+  allcaps/.code={%
       \let\moloch@sectiontitleformat\MakeUppercase%
       \setbeamerfont{section title}{shape=\normalfont}%
       \PackageWarning{beamerthememoloch}{%
@@ -173,23 +163,23 @@
 %    \begin{macrocode}
 \pgfkeys{
   /moloch/font/titleformat frame/.cd,
-    .is choice,
-    regular/.code={%
+  .is choice,
+  regular/.code={%
       \let\moloch@frametitleformat\@empty%
       \setbeamerfont{frametitle}{shape=\normalfont}%
     },
-    smallcaps/.code={%
+  smallcaps/.code={%
       \let\moloch@frametitleformat\@empty%
       \setbeamerfont{frametitle}{shape=\scshape}%
     },
-    allsmallcaps/.code={%
+  allsmallcaps/.code={%
       \let\moloch@frametitleformat\MakeLowercase%
       \setbeamerfont{frametitle}{shape=\scshape}%
       \PackageWarning{beamerthememoloch}{%
         Be aware that titleformat frame=allsmallcaps can lead to problems%
       }
     },
-    allcaps/.code={%
+  allcaps/.code={%
       \let\moloch@frametitleformat\MakeUppercase%
       \setbeamerfont{frametitle}{shape=\normalfont}
       \PackageWarning{beamerthememoloch}{%
@@ -245,61 +235,61 @@
 %
 %    \begin{macrocode}
 \patchcmd{\beamer@title}%
-  {\def\inserttitle{#2}}%
-  {\def\inserttitle{\moloch@titleformat{#2}}}%
-  {}%
-  {\PackageError{beamerfontthememoloch}{Patching title failed}\@ehc}
+{\def\inserttitle{#2}}%
+{\def\inserttitle{\moloch@titleformat{#2}}}%
+{}%
+{\PackageError{beamerfontthememoloch}{Patching title failed}\@ehc}
 \patchcmd{\beamer@subtitle}%
-  {\def\insertsubtitle{#2}}%
-  {\def\insertsubtitle{\moloch@subtitleformat{#2}}}%
-  {}%
-  {\PackageError{beamerfontthememoloch}{Patching subtitle failed}\@ehc}
+{\def\insertsubtitle{#2}}%
+{\def\insertsubtitle{\moloch@subtitleformat{#2}}}%
+{}%
+{\PackageError{beamerfontthememoloch}{Patching subtitle failed}\@ehc}
 \patchcmd{\sectionentry}
-  {\def\insertsectionhead{#2}}
-  {\def\insertsectionhead{\moloch@sectiontitleformat{#2}}}
-  {}
-  {\PackageError{beamerfontthememoloch}{Patching section title failed}\@ehc}
+{\def\insertsectionhead{#2}}
+{\def\insertsectionhead{\moloch@sectiontitleformat{#2}}}
+{}
+{\PackageError{beamerfontthememoloch}{Patching section title failed}\@ehc}
 \@tempswafalse
 \patchcmd{\beamer@section}
-  {\edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{\unexpanded{#1}}}}
-  {\edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
-    \noexpand\moloch@sectiontitleformat{\unexpanded{#1}}}}}
-  {\@tempswatrue}
-  {}
+{\edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{\unexpanded{#1}}}}
+{\edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
+      \noexpand\moloch@sectiontitleformat{\unexpanded{#1}}}}}
+{\@tempswatrue}
+{}
 \patchcmd{\beamer@section}
-  {\def\insertsectionhead{\hyperlink{Navigation\the\c@page}{#1}}}
-  {\def\insertsectionhead{\hyperlink{Navigation\the\c@page}{%
-    \moloch@sectiontitleformat{#1}}}}
-  {\@tempswatrue}
-  {}
+{\def\insertsectionhead{\hyperlink{Navigation\the\c@page}{#1}}}
+{\def\insertsectionhead{\hyperlink{Navigation\the\c@page}{%
+      \moloch@sectiontitleformat{#1}}}}
+{\@tempswatrue}
+{}
 \patchcmd{\beamer@section}
-  {\protected@edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{#1}}}
-  {\protected@edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
-    \noexpand\moloch@sectiontitleformat{#1}}}}
-  {\@tempswatrue}
-  {}
+{\protected@edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{#1}}}
+{\protected@edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
+      \noexpand\moloch@sectiontitleformat{#1}}}}
+{\@tempswatrue}
+{}
 \if@tempswa\else
   \PackageError{beamerfontthememoloch}{Patching section title failed}\@ehc
 \fi
 \@tempswafalse
 \patchcmd{\beamer@subsection}
-  {\edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{\unexpanded{#1}}}}
-  {\edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
-    \noexpand\moloch@sectiontitleformat{\unexpanded{#1}}}}}
-  {\@tempswatrue}
-  {}
+{\edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{\unexpanded{#1}}}}
+{\edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
+      \noexpand\moloch@sectiontitleformat{\unexpanded{#1}}}}}
+{\@tempswatrue}
+{}
 \patchcmd{\beamer@subsection}
-  {\def\insertsubsectionhead{\hyperlink{Navigation\the\c@page}{#1}}}
-  {\def\insertsubsectionhead{\hyperlink{Navigation\the\c@page}{%
-    \moloch@sectiontitleformat{#1}}}}
-  {\@tempswatrue}
-  {}
+{\def\insertsubsectionhead{\hyperlink{Navigation\the\c@page}{#1}}}
+{\def\insertsubsectionhead{\hyperlink{Navigation\the\c@page}{%
+      \moloch@sectiontitleformat{#1}}}}
+{\@tempswatrue}
+{}
 \patchcmd{\beamer@subsection}
-  {\protected@edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{#1}}}
-  {\protected@edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
-    \noexpand\moloch@sectiontitleformat{#1}}}}
-  {\@tempswatrue}
-  {}
+{\protected@edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{#1}}}
+{\protected@edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
+      \noexpand\moloch@sectiontitleformat{#1}}}}
+{\@tempswatrue}
+{}
 \if@tempswa\else
   \PackageError{beamerfontthememoloch}{Patching section title failed}\@ehc
 \fi
@@ -310,21 +300,21 @@
 %
 %    \begin{macrocode}
 \patchcmd{\beamer@@frametitle}
-  {{%
+{{%
       \gdef\insertframetitle{{#2\ifnum\beamer@autobreakcount>0\relax{}\space%
-      \usebeamertemplate*{frametitle continuation}\fi}}%
-    \gdef\beamer@frametitle{#2}%
-    \gdef\beamer@shortframetitle{#1}%
+              \usebeamertemplate*{frametitle continuation}\fi}}%
+      \gdef\beamer@frametitle{#2}%
+      \gdef\beamer@shortframetitle{#1}%
     }}
-  {{%
+{{%
       \gdef\insertframetitle{{\moloch@frametitleformat{#2}\ifnum%
-      \beamer@autobreakcount>0\relax{}\space%
-      \usebeamertemplate*{frametitle continuation}\fi}}%
-    \gdef\beamer@frametitle{#2}%
-    \gdef\beamer@shortframetitle{#1}%
+              \beamer@autobreakcount>0\relax{}\space%
+              \usebeamertemplate*{frametitle continuation}\fi}}%
+      \gdef\beamer@frametitle{#2}%
+      \gdef\beamer@shortframetitle{#1}%
     }}
-  {}
-  {\PackageError{beamerfontthememoloch}{Patching frame title failed}\@ehc}
+{}
+{\PackageError{beamerfontthememoloch}{Patching frame title failed}\@ehc}
 %    \end{macrocode}
 %
 %
