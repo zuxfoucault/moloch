@@ -14,8 +14,6 @@ jobs:
       - uses: teatimeguest/setup-texlive-action@v3
         with:
           packages: scheme-full
-      - name: Install l3build
-        run: tlmgr install l3build
       - name: Build and test LaTeX package
         run: |
           l3build check
