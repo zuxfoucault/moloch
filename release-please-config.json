@@ -2,7 +2,14 @@
   "packages": {
     ".": {
       "release-type": "simple",
-      "bump-minor-pre-major": true
+      "bump-minor-pre-major": true,
+      "extra-files": [
+        "src/beamercolorthememoloch.dtx",
+        "src/beamerfontthememoloch.dtx",
+        "src/beamerouterthememoloch.dtx",
+        "src/beamerinnerthememoloch.dtx",
+        "src/beamerthememoloch.dtx"
+      ]
     }
   }
 }
