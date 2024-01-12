@@ -57,10 +57,8 @@
   /moloch/inner/sectionpage/.cd,
   .is choice,
   none/.code=\moloch@disablesectionpage,
-  simple/.code={\moloch@enablesectionpage
-      \setbeamertemplate{section page}[simple]},
-  progressbar/.code={\moloch@enablesectionpage
-      \setbeamertemplate{section page}[progressbar]},
+  simple/.code={\moloch@enablesectionpage\setbeamertemplate{section page}[simple]},
+  progressbar/.code={\moloch@enablesectionpage\setbeamertemplate{section page}[progressbar]},
 }
 %    \end{macrocode}
 % \end{macro}
@@ -72,10 +70,8 @@
   /moloch/inner/subsectionpage/.cd,
   .is choice,
   none/.code=\moloch@disablesubsectionpage,
-  simple/.code={\moloch@enablesubsectionpage
-      \setbeamertemplate{section page}[simple]},
-  progressbar/.code={\moloch@enablesubsectionpage
-      \setbeamertemplate{section page}[progressbar]},
+  simple/.code={\moloch@enablesubsectionpage\setbeamertemplate{section page}[simple]},
+  progressbar/.code={\moloch@enablesubsectionpage\setbeamertemplate{section page}[progressbar]},
 }
 %    \end{macrocode}
 % \end{macro}
@@ -265,7 +261,7 @@
 }
 \defbeamertemplate{section page}{progressbar}{
   \centering
-  \begin{minipage}{22em}
+  \begin{minipage}{0.7875\linewidth}
     \raggedright
     \usebeamercolor[fg]{section title}
     \usebeamerfont{section title}
