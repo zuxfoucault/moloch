@@ -44,3 +44,13 @@ The theme itself is licensed under a [Creative Commons Attribution-ShareAlike
 means that if you change the theme and re-distribute it, you _must_ retain the
 copyright notice header and license it under the same CC-BY-SA license. This
 does not affect the presentation that you create with the theme.
+
+## Contributing
+
+Contributions are welcome, but we are generally not interested in changes that can be easily added through the standard Beamer interface.
+
+Also, when writing commit messages, please use the [conventional commits format](https://www.conventionalcommits.org/en/v1.0.0/).
+
+## Versioning
+
+The project uses [semantic versioning](https://semver.org).
