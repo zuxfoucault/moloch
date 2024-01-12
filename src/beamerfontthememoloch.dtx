@@ -207,7 +207,7 @@
 % \begin{macro}{\moloch@font@setdefaults}
 %    Sets default values for font theme options.
 %    \begin{macrocode}
-\newcommand{\moloch@font@setdefaults}{
+\newcommand{\moloch@font@setdefaults}{%
   \pgfkeys{/moloch/font/.cd,
     titleformat title=regular,
     titleformat subtitle=regular,
@@ -234,62 +234,86 @@
 % question}.
 %
 %    \begin{macrocode}
-\patchcmd{\beamer@title}%
-{\def\inserttitle{#2}}%
-{\def\inserttitle{\moloch@titleformat{#2}}}%
-{}%
-{\PackageError{beamerfontthememoloch}{Patching title failed}\@ehc}
-\patchcmd{\beamer@subtitle}%
-{\def\insertsubtitle{#2}}%
-{\def\insertsubtitle{\moloch@subtitleformat{#2}}}%
-{}%
-{\PackageError{beamerfontthememoloch}{Patching subtitle failed}\@ehc}
-\patchcmd{\sectionentry}
-{\def\insertsectionhead{#2}}
-{\def\insertsectionhead{\moloch@sectiontitleformat{#2}}}
-{}
-{\PackageError{beamerfontthememoloch}{Patching section title failed}\@ehc}
+\patchcmd{\beamer@title}{%
+  \def\inserttitle{#2}
+}{%
+  \def\inserttitle{\moloch@titleformat{#2}}
+}{}{%
+  \PackageError{beamerfontthememoloch}{Patching title failed}\@ehc
+}
+\patchcmd{\beamer@subtitle}{%
+  \def\insertsubtitle{#2}
+}{%
+  \def\insertsubtitle{\moloch@subtitleformat{#2}}
+}{}{%
+  \PackageError{beamerfontthememoloch}{Patching subtitle failed}\@ehc
+}
+\patchcmd{\sectionentry}{%
+  \def\insertsectionhead{#2}}{%
+  \def\insertsectionhead{\moloch@sectiontitleformat{#2}}
+}{}{%
+  \PackageError{beamerfontthememoloch}{Patching section title failed}\@ehc
+}
 \@tempswafalse
-\patchcmd{\beamer@section}
-{\edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{\unexpanded{#1}}}}
-{\edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
-      \noexpand\moloch@sectiontitleformat{\unexpanded{#1}}}}}
-{\@tempswatrue}
-{}
-\patchcmd{\beamer@section}
-{\def\insertsectionhead{\hyperlink{Navigation\the\c@page}{#1}}}
-{\def\insertsectionhead{\hyperlink{Navigation\the\c@page}{%
-      \moloch@sectiontitleformat{#1}}}}
-{\@tempswatrue}
-{}
-\patchcmd{\beamer@section}
-{\protected@edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{#1}}}
-{\protected@edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
-      \noexpand\moloch@sectiontitleformat{#1}}}}
-{\@tempswatrue}
-{}
+\patchcmd{\beamer@section}{%
+  \edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{\unexpanded{#1}}}
+}{%
+  \edef\insertsectionhead{%
+    \noexpand\hyperlink{%
+      Navigation\the\c@page
+    }{%
+      \noexpand\moloch@sectiontitleformat{\unexpanded{#1}}
+    }%
+  }%
+}{%
+  \@tempswatrue
+}{}
+\patchcmd{\beamer@section}{%
+  \def\insertsectionhead{\hyperlink{Navigation\the\c@page}{#1}}
+}{%
+  \def\insertsectionhead{%
+    \hyperlink{Navigation\the\c@page}{\moloch@sectiontitleformat{#1}}
+  }
+}{%
+  \@tempswatrue
+}{}
+\patchcmd{\beamer@section}{%
+  \protected@edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{#1}}
+}{%
+  \protected@edef\insertsectionhead{%
+    \noexpand\hyperlink{Navigation\the\c@page}{\noexpand\moloch@sectiontitleformat{#1}}}
+}{%
+  \@tempswatrue
+}{}
 \if@tempswa\else
   \PackageError{beamerfontthememoloch}{Patching section title failed}\@ehc
 \fi
 \@tempswafalse
-\patchcmd{\beamer@subsection}
-{\edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{\unexpanded{#1}}}}
-{\edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
-      \noexpand\moloch@sectiontitleformat{\unexpanded{#1}}}}}
-{\@tempswatrue}
+\patchcmd{\beamer@subsection}{%
+  \edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{\unexpanded{#1}}}
+}{%
+  \edef\insertsubsectionhead{%
+    \noexpand\hyperlink{Navigation\the\c@page}{\noexpand\moloch@sectiontitleformat{\unexpanded{#1}}}
+  }
+}{%
+  \@tempswatrue}
 {}
-\patchcmd{\beamer@subsection}
-{\def\insertsubsectionhead{\hyperlink{Navigation\the\c@page}{#1}}}
-{\def\insertsubsectionhead{\hyperlink{Navigation\the\c@page}{%
-      \moloch@sectiontitleformat{#1}}}}
-{\@tempswatrue}
-{}
-\patchcmd{\beamer@subsection}
-{\protected@edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{#1}}}
-{\protected@edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
-      \noexpand\moloch@sectiontitleformat{#1}}}}
-{\@tempswatrue}
-{}
+\patchcmd{\beamer@subsection}{%
+  \def\insertsubsectionhead{\hyperlink{Navigation\the\c@page}{#1}}
+}{%
+  \def\insertsubsectionhead{\hyperlink{Navigation\the\c@page}{\moloch@sectiontitleformat{#1}}}
+}{%
+  \@tempswatrue
+}{}
+
+\patchcmd{\beamer@subsection}{%
+  \protected@edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{#1}}
+}{%
+  \protected@edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{\noexpand\moloch@sectiontitleformat{#1}}}
+}{%
+  \@tempswatrue
+}{}
+
 \if@tempswa\else
   \PackageError{beamerfontthememoloch}{Patching section title failed}\@ehc
 \fi
