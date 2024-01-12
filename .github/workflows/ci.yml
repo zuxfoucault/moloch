@@ -42,7 +42,6 @@ jobs:
         run: |
           echo "${{ toJSON(github.event.pull_request) }}" >> pr.json
           echo "pr_number=$(jq -r '.number' pr.json)" >> $GITHUB_ENV
-          if: ${{ steps.release.outputs.prs_created }}
         if: ${{ steps.release.outputs.prs_created }}
       - name: Checkout PR code
         uses: actions/checkout@v4
