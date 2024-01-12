@@ -10,13 +10,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Set up TeX Live
-        uses: latex-actions/setup-texlive@v1
+      - uses: actions/checkout@v2
+      - uses: teatimeguest/setup-texlive-action@v3
         with:
-          texlive-version: 2022
-          scheme: full
+          packages: scheme-full
       - name: Install l3build
         run: tlmgr install l3build
       - name: Build and test LaTeX package
