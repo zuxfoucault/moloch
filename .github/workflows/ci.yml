@@ -40,7 +40,7 @@ jobs:
           packages: scheme-basic
       - name: Get PR number
         run: |
-          echo ${{ fromJSON(steps.release.outputs.pr) }} >> pr_json
+          pr_json=$(echo "${{ steps.release.outputs.pr }}" | jq -r .)
           echo "pr_number=$(jq -r '.number' pr_json)" >> $GITHUB_ENV
         if: ${{ steps.release.outputs.prs_created }}
       - name: Checkout PR code
