@@ -299,22 +299,25 @@
 % the frame title we have to patch |\beamer@@frametitle|.
 %
 %    \begin{macrocode}
-\patchcmd{\beamer@@frametitle}
-{{%
-      \gdef\insertframetitle{{#2\ifnum\beamer@autobreakcount>0\relax{}\space%
-              \usebeamertemplate*{frametitle continuation}\fi}}%
-      \gdef\beamer@frametitle{#2}%
-      \gdef\beamer@shortframetitle{#1}%
-    }}
-{{%
-      \gdef\insertframetitle{{\moloch@frametitleformat{#2}\ifnum%
-              \beamer@autobreakcount>0\relax{}\space%
-              \usebeamertemplate*{frametitle continuation}\fi}}%
-      \gdef\beamer@frametitle{#2}%
-      \gdef\beamer@shortframetitle{#1}%
-    }}
-{}
-{\PackageError{beamerfontthememoloch}{Patching frame title failed}\@ehc}
+\patchcmd{\beamer@@frametitle}{%
+  \gdef\insertframetitle{{%
+        #2%
+        \ifnum\beamer@autobreakcount>0
+          \relax{}\space%
+          \beamer@insertframetitlecontinuation%
+        \fi%
+      }}%
+}{%
+  \gdef\insertframetitle{{%
+        \moloch@frametitleformat{#2}%
+        \ifnum\beamer@autobreakcount>0
+          \relax{}\space%
+          \beamer@insertframetitlecontinuation%
+        \fi%
+      }}%
+}{}{%
+  \PackageError{beamerfontthememoloch}{Patching frame title failed}\@ehc
+}
 %    \end{macrocode}
 %
 %
