@@ -38,12 +38,17 @@ jobs:
       - uses: teatimeguest/setup-texlive-action@v3
         with:
           packages: scheme-basic
+      - name: Get PR number
+        run: |
+          echo "${{ toJSON(github.event.pull_request) }}" >> pr.json
+          echo "pr_number=$(jq -r '.number' pr.json)" >> $GITHUB_ENV
+          if: ${{ steps.release.outputs.prs_created }}
         if: ${{ steps.release.outputs.prs_created }}
-      - name: Checkout code
+      - name: Checkout PR code
         uses: actions/checkout@v4
         with:
-          ref: refs/pull/${{ steps.release.outputs.pr.number }}/merge
-        if: ${{ steps.release.outputs.prs_created }}
+          ref: refs/pull/${{ env.pr_number }}/merge
+          if: ${{ steps.release.outputs.prs_created }}
       - name: tag
         run: l3build tag 0.1.0
         if: ${{ steps.release.outputs.prs_created }}
