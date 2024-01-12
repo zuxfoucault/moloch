@@ -26,7 +26,7 @@ Moloch.
 \usetheme{moloch}
 \title{A minimal example}
 \date{\today}
-\author{Matthias Vogelgesang}
+\author{Johan Larsson}
 \institute{Centre for Modern Beamer Themes}
 \begin{document}
   \maketitle
