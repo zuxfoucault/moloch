@@ -1,5 +1,0 @@
-\documentclass[hyperref={draft}]{beamer}
-
-\usetheme{moloch}
-
-\input{molochtheme}
