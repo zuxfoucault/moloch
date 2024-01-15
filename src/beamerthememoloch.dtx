@@ -70,14 +70,14 @@
   allsmallcaps/.code={%
       \let\moloch@plaintitleformat\MakeLowercase%
       \setbeamerfont{standout}{shape=\scshape}%
-      \PackageWarning{beamerthememoloch}{%
+      \PackageNote{beamerthememoloch}{%
         Be aware that titleformat plain=allsmallcaps can lead to problems%
       }
     },
   allcaps/.code={%
       \let\moloch@plaintitleformat\MakeUppercase%
       \setbeamerfont{standout}{shape=\normalfont}%
-      \PackageWarning{beamerthememoloch}{%
+      \PackageNote{beamerthememoloch}{%
         Be aware that titleformat plain=allcaps can lead to problems%
       }
     },
