@@ -101,19 +101,6 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% For backwards compatibility with earlier betas of the theme, we implement
-% deprecated option names as aliases to the corresponding |key=value| options.
-%
-%    \begin{macrocode}
-\pgfkeys{/moloch/.cd,
-  usetitleprogressbar/.code=\pgfkeysalso{outer/progressbar=frametitle},
-  noslidenumbers/.code=\pgfkeysalso{outer/numbering=none},
-  usetotalslideindicator/.code=\pgfkeysalso{outer/numbering=fraction},
-  nosectionslide/.code=\pgfkeysalso{inner/sectionpage=none},
-  darkcolors/.code=\pgfkeysalso{color/background=dark},
-}
-%    \end{macrocode}
-%
 % Set default values for options.
 %
 %    \begin{macrocode}
