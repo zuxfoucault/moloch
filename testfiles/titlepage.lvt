@@ -1,17 +1,5 @@
-\input regression-test.tex\relax
+\documentclass[hyperref={draft}]{beamer}
 
-\documentclass{beamer}
+\usetheme{default}
 
-\usetheme{moloch}
-
-\begin{document}
-
-\START
-\showoutput
-\begin{frame}
-  Some frame content
-\end{frame}
-\vfil\break
-\END
-
-\end{document}
+\input{beamerthemebase}
