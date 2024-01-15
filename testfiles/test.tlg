@@ -1570,7 +1570,7 @@ Completed box being shipped out [4]
 .....\glue 6.0 plus 2.0 minus 2.0
 .....\glue(\baselineskip) 8.03577
 .....\hbox(7.60416+2.12917)x307.28987
-......\pdfcolorstack 0 push {0.07843 0.6902 0.23923 rg 0.07843 0.6902 0.23923 RG}
+......\pdfcolorstack 0 push {0 0.50195 0.50195 rg 0 0.50195 0.50195 RG}
 ......\vbox(7.60416+2.12917)x307.28987
 .......\hbox(7.60416+2.12917)x307.28987, glue set 116.32355fil
 ........\hbox(0.0+0.0)x0.0
@@ -1698,7 +1698,7 @@ Completed box being shipped out [4]
 .....\glue 0.0 plus 1.0fil
 ....\pdfcolorstack 0 pop
 .\kern 0.0
-Package beamerthememoloch Warning: Be aware that titleformat frame=allsmallcaps can lead to problems on input line ....
+Package beamerthememoloch Info: Be aware that titleformat frame=allsmallcaps can lead to problems on input line ....
 Completed box being shipped out [5]
 \vbox(200.87663+0.0)x263.47263
 .\hbox(0.0+0.0)x0.0
@@ -1996,7 +1996,7 @@ Completed box being shipped out [5]
 .....\glue 0.0 plus 1.0fil
 ....\pdfcolorstack 0 pop
 .\kern 0.0
-Package beamerthememoloch Warning: Be aware that titleformat frame=allcaps can lead to problems on input line ....
+Package beamerthememoloch Info: Be aware that titleformat frame=allcaps can lead to problems on input line ....
 Completed box being shipped out [6]
 \vbox(200.87663+0.0)x263.47263
 .\hbox(0.0+0.0)x0.0
