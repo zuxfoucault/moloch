@@ -145,23 +145,6 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\plain}
-%   Creates a plain frame with dark background, suitable for displaying images
-%   or a few words. The format of the text can be set with the
-%   |titleformat plain| option.
-%    \begin{macrocode}
-\def\moloch@plaintitleformat#1{#1}
-\newcommand{\plain}[2][]{%
-  \PackageWarning{beamerthememoloch}{%
-    The syntax `\plain' may be deprecated in a future version of Moloch.
-    Please use a frame with [standout] instead.
-  }
-  \begin{frame}[standout]{#1}
-    \moloch@plaintitleformat{#2}
-  \end{frame}
-}
-%    \end{macrocode}
-% \end{macro}
 %
 % \begin{macro}{\mreducelistspacing}
 %    \begin{macrocode}
