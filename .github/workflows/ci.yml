@@ -14,12 +14,10 @@ jobs:
       - uses: teatimeguest/setup-texlive-action@v3
         with:
           packages: scheme-full
-      - name: check
-        run: l3build check
       - name: document
         run: l3build doc
-      - name: install
-        run: l3build install
+      - name: build
+        run: l3build ctan -q -H --show-log-on-error
   release:
     if: ${{ github.ref == 'refs/heads/main' }}
     permissions:
