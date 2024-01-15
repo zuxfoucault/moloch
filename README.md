@@ -1,5 +1,7 @@
 ## Moloch
 
+[![CI](https://github.com/jolars/moloch/actions/workflows/ci.yml/badge.svg)](https://github.com/jolars/moloch/actions/workflows/ci.yml)
+
 Moloch is a simple Beamer theme suitable for anyone to use. It is
 a fork of the [Moloch Theme](https://github.com/matze/mtheme).
 
