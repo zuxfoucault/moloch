@@ -11,9 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: teatimeguest/setup-texlive-action@v3
+      - uses: zauguin/install-texlive@v3
         with:
-          packages: scheme-full
+          packages: >
+            l3build tex latex-bin beamer tikz pgfopts etoolsbox calc
       - name: check
         run: l3build check
       - name: document
