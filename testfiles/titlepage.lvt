@@ -3,10 +3,6 @@
 \usetheme{moloch}
 \usepackage{expl3}
 \title{Moloch Test Suite}
-\subtitle{A subtitle that is way to long and in fact might just need to be split across lines}
-\author[Johan]{Johan Larsson}
-\institute[LU]{Lund Univesity//Department of Statistics}
-\date{January 15, 2024}
 
 \begin{document}
 
@@ -15,5 +11,5 @@
 \maketitle
 \vfil\break
 \END
-\input regression-test
 
+\end{document}
