@@ -1,14 +1,16 @@
 \input{regression-test.tex}
+
 \documentclass{beamer}
 \usetheme{moloch}
-\usepackage{expl3}
-\title{Moloch Test Suite}
 
 \begin{document}
 
+\usepackage{expl3}
 \START
 \showoutput
-\maketitle
+\begin{frame}
+  Some frame content
+\end{frame}
 \vfil\break
 \END
 
