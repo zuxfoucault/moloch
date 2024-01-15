@@ -1,11 +1,11 @@
-\input{regression-test.tex}
+\input regression-test.tex\relax
 
 \documentclass{beamer}
+
 \usetheme{moloch}
 
 \begin{document}
 
-\usepackage{expl3}
 \START
 \showoutput
 \begin{frame}
