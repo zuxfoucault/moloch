@@ -15,11 +15,16 @@ function update_tag(file, content, tagname, tagdate)
     return content:gsub(
       pattern,
       function(package_name, old_date, old_version, description)
+        -- if tagdate is nil, use old_date
+        if tagname == nil then
+          tagname = old_version
+        end
+
         return string.format(
           "\\ProvidesPackage{%s}[%s v%s %s]",
           package_name,
           tagdate,
-          old_version,
+          tagname,
           description
         )
       end
