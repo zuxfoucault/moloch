@@ -4,13 +4,18 @@
 
 \usepackage[T1]{fontenc}
 
-\usepackage{appendixnumberbeamer}
+% \usepackage{appendixnumberbeamer}
+
+\setbeamertemplate{page number in head/foot}[appendixframenumber]
+
+% \molochset{progressbar=foot}
 
 \usepackage{booktabs}
 \usepackage[scale=2]{ccicons}
 
-\usepackage[medium,light]{FiraSans}
-\usepackage[medium]{FiraMono}
+% \usepackage[medium,light]{FiraSans}
+% \usepackage[medium]{FiraMono}
+\usepackage{lmodern}
 
 \usepackage{xspace}
 
@@ -262,16 +267,6 @@
 \end{frame}
 
 \appendix
-
-\begin{frame}[fragile]{Backup Slides}
-  To add slides at the end of your presentation for reference during audience questions, you just need to
-  \begin{enumerate}
-    \item include the "appendixnumberbeamer" package in your preamble, and
-    \item call \verb+\appendix+ command before your backup slides.
-  \end{enumerate}
-
-  By doing this, the \themename theme will automatically disable slide numbering and progress bars for the slides in the appendix.
-\end{frame}
 
 \begin{frame}[allowframebreaks]{References}
 

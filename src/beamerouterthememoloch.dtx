@@ -40,19 +40,6 @@
 %
 % \subsubsection{Options}
 %
-% \begin{macro}{numbering}
-%    Adds slide numbers to the bottom right of each slide.
-%    \begin{macrocode}
-\pgfkeys{
-  /moloch/outer/numbering/.cd,
-  .is choice,
-  none/.code=\setbeamertemplate{frame numbering}[none],
-  counter/.code=\setbeamertemplate{frame numbering}[counter],
-  fraction/.code=\setbeamertemplate{frame numbering}[fraction],
-}
-%    \end{macrocode}
-% \end{macro}
-%
 % \begin{macro}{progressbar}
 %    Adds a progress bar to the top, bottom, or frametitle of each slide.
 %    \begin{macrocode}
@@ -88,7 +75,6 @@
 %    \begin{macrocode}
 \newcommand{\moloch@outer@setdefaults}{
   \pgfkeys{/moloch/outer/.cd,
-    numbering=counter,
     progressbar=none,
   }
 }
@@ -106,22 +92,6 @@
 \setbeamertemplate{navigation symbols}{}
 %    \end{macrocode}
 %
-% \begin{macro}{frame numbering}
-%    Templates for the frame number. Can be omitted, shown or displayed as a
-%    fraction of the total frames.
-%    \begin{macrocode}
-\defbeamertemplate{frame footer}{none}{}
-\defbeamertemplate{frame footer}{custom}[1]{ #1 }
-%    \end{macrocode}
-%
-%    \begin{macrocode}
-\defbeamertemplate{frame numbering}{none}{}
-\defbeamertemplate{frame numbering}{counter}{\insertframenumber}
-\defbeamertemplate{frame numbering}{fraction}{
-  \insertframenumber/\inserttotalframenumber
-}
-%    \end{macrocode}
-% \end{macro}
 %
 % \begin{macro}{headline}
 % \begin{macro}{footline}
@@ -129,11 +99,16 @@
 %    \begin{macrocode}
 \defbeamertemplate{headline}{plain}{}
 \defbeamertemplate{footline}{plain}{%
-  \begin{beamercolorbox}[wd=\textwidth, sep=3ex]{footline}%
+  \begin{beamercolorbox}[
+      leftskip=4pt,%
+      rightskip=5pt,%
+      wd=\textwidth,%
+    ]{footline}%
+    \usebeamercolor[fg]{page number in head/foot}%
     \usebeamerfont{page number in head/foot}%
-    \usebeamertemplate*{frame footer}
+    \usebeamertemplate*{frame footer}%
     \hfill%
-    \usebeamertemplate*{frame numbering}
+    \usebeamertemplate*{page number in head/foot}\vskip4pt%
   \end{beamercolorbox}%
 }
 %    \end{macrocode}

@@ -283,12 +283,6 @@ The list of options is structured as shown in the following example.
 
 \subsubsection{Outer theme}
 
-\DescribeOption{numbering}{none, counter, fraction}{counter}{
-  Controls whether the frame number at the bottom right of each slide is
-  omitted (|none|), shown (|counter|) or displayed as a fraction of the total
-  number of frames (|fraction|).
-}
-
 \DescribeOption{progressbar}{none, head, frametitle, foot}{none}{
   Optionally adds a progress bar to the top of each frame (|head|),
   the bottom of each frame (|foot|), or directly below each frame title
@@ -366,16 +360,6 @@ single sentence or image. To use it, add the key |standout| to the frame:
 \end{lstlisting}
 
 \section{Tips \& Tricks}
-
-\subsection{Backup Slides}
-
-Speakers will often include extra slides at the end of their presentation to
-refer to during audience questions. One easy way to do this is to include the
-\verb|appendixnumberbeamer| package in your preamble and call \verb|\appendix| before your backup slides.
-
-\themename will automatically turn off slide numbering and progress bars for
-slides in the appendix.
-
 
 \section{Known Issues}
 
