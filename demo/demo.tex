@@ -1,20 +1,17 @@
 \documentclass[10pt]{beamer}
 
-\usetheme{moloch}
-
 \usepackage[T1]{fontenc}
 
-% \usepackage{appendixnumberbeamer}
+\usetheme{moloch}
 
 \setbeamertemplate{page number in head/foot}[appendixframenumber]
+\setbeamertemplate{section in toc}[sections numbered]
 
 % \molochset{progressbar=foot}
 
 \usepackage{booktabs}
 \usepackage[scale=2]{ccicons}
 
-% \usepackage[medium,light]{FiraSans}
-% \usepackage[medium]{FiraMono}
 \usepackage{lmodern}
 
 \usepackage{xspace}
@@ -32,7 +29,6 @@
 \maketitle
 
 \begin{frame}{Table of Contents}
-  \setbeamertemplate{section in toc}[sections numbered]
   \tableofcontents[hideallsubsections]
 \end{frame}
 
@@ -51,60 +47,8 @@
 \begin{frame}[fragile]{Sections}
   Sections group slides of the same topic by introducing a section page between them. A progress bar is shown which indicates how far along in the presentation you are.
 
-  \begin{verbatim}\section{Title Formats}\end{verbatim}
+  \begin{verbatim}\section{Elements}\end{verbatim}
 \end{frame}
-
-\section{Title Formats}
-
-\begin{frame}[fragile]{Moloch Title Formats}
-  \themename supports four different title formats:
-  \begin{itemize}
-    \item Regular
-    \item \textsc{Small Caps}
-    \item \textsc{All Small Caps}
-    \item ALL CAPS
-  \end{itemize}
-
-  They can either be set globally for every frame or used locally just for the current frame and onwards by using
-  \begin{verbatim}\molochset{titleformat frame=<option>}\end{verbatim}
-\end{frame}
-
-{
-\molochset{titleformat frame=smallcaps}
-\begin{frame}{Small Caps}
-  This frame uses the \texttt{smallcaps} title format.
-
-  \begin{alertblock}{Potential Problems}
-    Be aware that not every font supports small caps. If for example you typeset your presentation with pdfTeX and the Computer Modern Sans Serif font, every text in small caps will be typeset with the Computer Modern Serif font instead.
-  \end{alertblock}
-\end{frame}
-}
-
-{
-\molochset{titleformat frame=allsmallcaps}
-\begin{frame}{All Small Caps}
-  This frame uses the \texttt{allsmallcaps} title format.
-
-  \begin{alertblock}{Potential Problems}
-    As this title format also uses small caps you face the same problems as with the \texttt{smallcaps} title format. Additionally this format can cause some other problems. Please refer to the documentation if you consider using it.
-
-    \medskip
-
-    As a rule of thumb: just use it for plaintext-only titles.
-  \end{alertblock}
-\end{frame}
-}
-
-{
-\molochset{titleformat frame=allcaps}
-\begin{frame}{All Caps}
-  This frame uses the \texttt{allcaps} title format.
-
-  \begin{alertblock}{Potential Problems}
-    This title format is not as problematic as the \texttt{allsmallcaps} format, but basically suffers from the same deficiencies. So please have a look at the documentation if you want to use it.
-  \end{alertblock}
-\end{frame}
-}
 
 \section{Elements}
 
@@ -269,10 +213,8 @@
 \appendix
 
 \begin{frame}[allowframebreaks]{References}
-
   \bibliography{demo}
   \bibliographystyle{abbrv}
-
 \end{frame}
 
 \end{document}

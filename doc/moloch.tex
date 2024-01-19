@@ -17,8 +17,6 @@
 \usepackage{xspace}
 \onehalfspacing
 
-\usepackage{etoolbox}
-
 \usepackage{enumitem}
 \setlist[itemize]{noitemsep}
 \setlist[enumerate]{noitemsep}
@@ -57,7 +55,7 @@
   xrightmargin=0em,
   aboveskip=1em,
   belowskip=1em,
-  morekeywords={usetheme,institute,maketitle,@moloch@titleformat,%
+  morekeywords={usetheme,institute,maketitle,%
                 plain,setbeamercolor,molochset,setsansfont,setmonofont},
 }
 \lstMakeShortInline|
@@ -205,7 +203,6 @@ The following code shows a minimal example of a Beamer presentation using
   \begin{itemize}
     \item |tikz|
     \item |pgfopts|
-    \item |etoolbox|
     \item |calc|
   \end{itemize}
 \end{multicols}
@@ -243,26 +240,6 @@ The list of options is structured as shown in the following example.
   A short description of the option.
 }
 
-
-\subsubsection{Main theme}
-
-\DescribeOption{titleformat}%
-{regular, smallcaps, allsmallcaps, allcaps}
-{regular}{
-  Changes the format of titles, subtitles, section titles, frame titles, and
-  the text on ``standout'' frames. The available options produce
-  Regular, \textsc{SmallCaps}, \textsc{\MakeLowercase{AllSmallCaps}}, or
-  \MakeUppercase{AllCaps} titles. Please refer to
-  Section~\ref{sec:titleformats} for known issues with these options.
-}
-
-\DescribeOption{titleformat plain}%
-{regular, smallcaps, allsmallcaps, allcaps}%
-{regular}{
-  Changes the format of ``standout'' frames (see |titleformat|, above).
-}
-
-
 \subsubsection{Inner theme}
 
 \DescribeOption{sectionpage}{none, simple, progressbar}{progressbar}{
@@ -295,20 +272,6 @@ The list of options is structured as shown in the following example.
   Provides the option to have a dark background and light foreground instead
   of the reverse.
 }
-
-
-\subsubsection{Font theme}
-
-\DescribeMacro{titleformat title}
-\DescribeMacro{titleformat subtitle}
-\DescribeMacro{titleformat section}
-\DescribeOption{titleformat frame}%
-{regular, smallcaps, allsmallcaps, allcaps}%
-{regular}{
-  Individually controls the format of titles, subtitles, section titles, and
-  frame titles (see |titleformat|, above).
-}
-
 
 \subsection{Color Customization}
 
@@ -359,42 +322,7 @@ single sentence or image. To use it, add the key |standout| to the frame:
 \end{frame}
 \end{lstlisting}
 
-\section{Tips \& Tricks}
-
 \section{Known Issues}
-
-\subsection{Title formats}
-\label{sec:titleformats}
-
-Be aware that not every font supports small caps, so the |smallcaps| or
-|allsmallcaps| options may not work for all fonts.
-In particular, the Computer Modern sans-serif typeface, which is used when
-\themename is compiled with pdf\LaTeX, does not have a small-caps variant.
-
-The title format options |allsmallcaps| and |allcaps| are quite nice from an
-aesthetic point of view, but their use of |\MakeLowercase| and
-|\MakeUppercase| can cause unexpected problems. For example:
-
-\begin{itemize}
-  \item Some commands, like |\\|, do not work inside |\MakeLowercase| and
-        |\MakeUppercase|. (See \href{https://github.com/matze/mtheme/issues/125}
-        {\#125})
-  \item Only alphabetic characters are affected by |\MakeLowercase|, so
-        numerals and punctuation remain at full height. This can spoil some of the
-        aesthetic benefits of |allsmallcaps|. (See
-        \href{https://github.com/matze/mtheme/issues/33}{\#33})
-  \item |\MakeLowercase| and |\MakeUppercase| apply to math mode and
-        |\scshape| does not. This can easily introduce mathematical errors that
-        are hard to catch.
-  \item It is impossible to typeset symbols which are encoded as uppercase
-        letters in a different font. In particular, |\mathbb| and |\mathcal|
-        letters will be replaced by other math glyphs. (See
-        \href{https://github.com/matze/mtheme/issues/153}{\#153})
-\end{itemize}
-
-The |allsmallcaps| and |allcaps| options are safe to use if your titles contain
-only alphabetic characters and do not require the expansion of any macros.
-
 
 \subsection{Interactions with other color themes}
 

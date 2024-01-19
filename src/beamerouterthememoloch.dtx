@@ -31,7 +31,6 @@
 % \subsubsection{Package dependencies}
 %
 %    \begin{macrocode}
-\RequirePackage{etoolbox}
 \RequirePackage{calc}
 \RequirePackage{pgfopts}
 %    \end{macrocode}
@@ -125,14 +124,10 @@
 %    \begin{macrocode}
 \newlength{\moloch@frametitle@padding}
 \setlength{\moloch@frametitle@padding}{2.2ex}
-\newcommand{\moloch@frametitlestrut@start}{
-  \rule{0pt}{\moloch@frametitle@padding +%
-    \totalheightof{%
-      \ifcsdef{moloch@frametitleformat}{\moloch@frametitleformat X}{X}%
-    }%
-  }%
+\newcommand{\moloch@frametitlestrut@start}{%
+  \rule{0pt}{\moloch@frametitle@padding + \totalheightof{X}}%
 }
-\newcommand{\moloch@frametitlestrut@end}{
+\newcommand{\moloch@frametitlestrut@end}{%
   \rule[-\moloch@frametitle@padding]{0pt}{\moloch@frametitle@padding}
 }
 \defbeamertemplate{frametitle}{plain}{%
