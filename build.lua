@@ -9,6 +9,8 @@ textfiles = { "*.md", "LICENSE" }
 checkengines = { "pdftex" }
 checksuppfiles = { "*.tex" }
 
+packtdszip = true
+
 maxprintline = 9999
 
 uploadconfig = {
