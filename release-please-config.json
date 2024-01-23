@@ -9,6 +9,7 @@
         "src/beamerouterthememoloch.dtx",
         "src/beamerinnerthememoloch.dtx",
         "src/beamerthememoloch.dtx",
+        "doc/moloch.tex",
         "build.lua"
       ]
     }
