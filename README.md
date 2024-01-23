@@ -9,7 +9,7 @@ The fork was created for the following reasons:
 
 - To fix some outstanding issues that had not been addressed for a long time.
 - To remove some of the more opinionated design choices, such as special handling of the Fira family of fonts.
-- To strip away some features that ad complexity to the code base without achieving valuable functionality for the majority of users, such as special code block designs and the pgfplots theme.
+- To strip away some features that added complexity to the code base without achieving valuable functionality for the majority of users, such as special code block designs and the pgfplots theme.
 
 Do not expect this theme to be backwards compatible with the Metropolis theme.
 
