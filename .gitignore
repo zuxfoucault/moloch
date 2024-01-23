@@ -309,3 +309,4 @@ build/
 *-ctan.zip
 .oc
 *.curlopt
+*.zip
