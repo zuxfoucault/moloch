@@ -161,7 +161,9 @@
 \setlength{\moloch@progressinheadfoot@linewidth}{0.4pt}
 \setbeamertemplate{progress bar in head/foot}{
   \nointerlineskip
-  \pgfmathsetlength{\moloch@progressinheadfoot}{\paperwidth * min(1,\insertframenumber/\inserttotalframenumber)}
+  \pgfmathsetlength{\moloch@progressinheadfoot}{%
+    \paperwidth * min(1,\insertframenumber/\inserttotalframenumber)%
+  }
   \begin{beamercolorbox}[wd=\paperwidth]{progress bar in head/foot}
     \tikzexternaldisable
     \begin{tikzpicture}
