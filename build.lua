@@ -3,7 +3,9 @@
 module = "moloch"
 
 sourcefiledir = "src"
-typesetfiles = { "doc/moloch.tex" }
+docfiledir = "doc"
+typesetfiles = { "*.tex" }
+textfiles = { "*.md", "LICENSE" }
 checkengines = { "pdftex" }
 checksuppfiles = { "*.tex" }
 
@@ -13,7 +15,8 @@ uploadconfig = {
   pkg = "moloch",
   version = "0.1.0", -- x-release-please-version
   author = "Johan Larsson",
-  license = "CC BY-SA 4.0",
+  uploader = "Johan Larsson",
+  license = "cc-by-sa-4",
   summary = "A clean and simple beamer theme",
   description = [[
     Moloch is a clean and simple beamer theme. It is a fork of the
@@ -23,7 +26,8 @@ uploadconfig = {
   ctanPath = "/macros/latex/contrib/beamer-contrib/themes/moloch",
   repository = "https://github.com/jolars/moloch",
   bugtracker = "https://github.com/jolars/moloch/issues",
-  topic = "Presentation",
+  support = "https://github.com/jolars/moloch/discussions",
+  topic = "presentation",
   update = false,
 }
 
