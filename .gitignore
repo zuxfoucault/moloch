@@ -308,3 +308,4 @@ build/
 .latex-cache
 *-ctan.zip
 .oc
+*.curlopt
