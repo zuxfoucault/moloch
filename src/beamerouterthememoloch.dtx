@@ -165,8 +165,14 @@
   \begin{beamercolorbox}[wd=\paperwidth]{progress bar in head/foot}
     \tikzexternaldisable
     \begin{tikzpicture}
-      \fill[bg] (0,0) rectangle (\paperwidth, \moloch@progressinheadfoot@linewidth);
-      \fill[fg] (0,0) rectangle (\moloch@progressinheadfoot, \moloch@progressinheadfoot@linewidth);
+      \fill[bg]
+      (0,0)
+      rectangle
+      (\paperwidth, \moloch@progressinheadfoot@linewidth);
+      \fill[fg]
+      (0,0)
+      rectangle
+      (\moloch@progressinheadfoot, \moloch@progressinheadfoot@linewidth);
     \end{tikzpicture}
     \tikzexternalenable
   \end{beamercolorbox}

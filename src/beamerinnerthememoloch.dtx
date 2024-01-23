@@ -56,8 +56,14 @@
   /moloch/inner/sectionpage/.cd,
   .is choice,
   none/.code=\moloch@disablesectionpage,
-  simple/.code={\moloch@enablesectionpage\setbeamertemplate{section page}[simple]},
-  progressbar/.code={\moloch@enablesectionpage\setbeamertemplate{section page}[progressbar]},
+  simple/.code={%
+      \moloch@enablesectionpage%
+      \setbeamertemplate{section page}[simple]%
+    },
+  progressbar/.code={%
+      \moloch@enablesectionpage%
+      \setbeamertemplate{section page}[progressbar]%
+    },
 }
 %    \end{macrocode}
 % \end{macro}
@@ -69,8 +75,14 @@
   /moloch/inner/subsectionpage/.cd,
   .is choice,
   none/.code=\moloch@disablesubsectionpage,
-  simple/.code={\moloch@enablesubsectionpage\setbeamertemplate{section page}[simple]},
-  progressbar/.code={\moloch@enablesubsectionpage\setbeamertemplate{section page}[progressbar]},
+  simple/.code={%
+      \moloch@enablesubsectionpage%
+      \setbeamertemplate{section page}[simple]%
+    },
+  progressbar/.code={%
+      \moloch@enablesubsectionpage%
+      \setbeamertemplate{section page}[progressbar]%
+    },
 }
 %    \end{macrocode}
 % \end{macro}
@@ -335,8 +347,14 @@
   }
   \tikzexternaldisable
   \begin{tikzpicture}
-    \fill[bg] (0,0) rectangle (\textwidth, \moloch@progressonsectionpage@linewidth);
-    \fill[fg] (0,0) rectangle (\moloch@progressonsectionpage, \moloch@progressonsectionpage@linewidth);
+    \fill[bg]
+    (0,0)
+    rectangle
+    (\textwidth, \moloch@progressonsectionpage@linewidth);
+    \fill[fg]
+    (0,0)
+    rectangle
+    (\moloch@progressonsectionpage, \moloch@progressonsectionpage@linewidth);
   \end{tikzpicture}
   \tikzexternalenable
 }
@@ -374,7 +392,9 @@
 \setbeamertemplate{footnote}{%
   \parindent 0em\noindent%
   \raggedright
-  \usebeamercolor{footnote}\hbox to 0.8em{\hfil\insertfootnotemark}\insertfootnotetext\par%
+  \usebeamercolor{footnote}%
+  \hbox to 0.8em{\hfil\insertfootnotemark}%
+  \insertfootnotetext\par%
 }
 %    \end{macrocode}
 %
@@ -412,6 +432,7 @@
 %
 % \themename offers a custom frame format with large, centered text and an
 % inverted background. To use it, add the key |standout| to the frame:
+%
 % |\begin{frame}[standout] ... \end{frame}|.
 %
 % \begin{macro}{standout}
