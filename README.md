@@ -1,6 +1,6 @@
 # Moloch
 
-![CTAN](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fctan.org%2Fjson%2F2.0%2Fpkg%2Fmoloch&query=%24.version.number&logo=latex&label=CTAN)
+[![CTAN](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fctan.org%2Fjson%2F2.0%2Fpkg%2Fmoloch&query=%24.version.number&logo=latex&label=CTAN)](https://ctan.org/pkg/moloch)
 [![CI](https://github.com/jolars/moloch/actions/workflows/ci.yml/badge.svg)](https://github.com/jolars/moloch/actions/workflows/ci.yml)
 
 Moloch is a simple Beamer theme suitable for anyone to use. It is
