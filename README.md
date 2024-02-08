@@ -1,5 +1,6 @@
-## Moloch
+# Moloch
 
+![CTAN](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fctan.org%2Fjson%2F2.0%2Fpkg%2Fmoloch&query=%24.version.number&logo=latex&label=CTAN)
 [![CI](https://github.com/jolars/moloch/actions/workflows/ci.yml/badge.svg)](https://github.com/jolars/moloch/actions/workflows/ci.yml)
 
 Moloch is a simple Beamer theme suitable for anyone to use. It is
@@ -15,10 +16,19 @@ Do not expect this theme to be backwards compatible with the Metropolis theme.
 
 ## Installation
 
-A CTAN release is planned, but for now you can install the theme manually from source. You need a working LaTeX installation with `l3build` installed. Then just follow these steps:
+Moloch is on [CTAN](https://ctan.org/pkg/moloch), so you can install it using your favorite LaTeX package manager. For example, with `tlmgr`:
 
-1. Clone the repository: `git clone https://github.com/jolars/moloch.git`
-2. Install the package: `l3build install`
+```sh
+tlmgr install moloch
+```
+
+You can also install the theme from source, in which case you need a working LaTeX installation with `l3build` installed. Then just follow these steps:
+
+```sh
+git clone https://github.com/jolars/moloch.git
+cd moloch
+l3build install
+```
 
 ## Usage
 
