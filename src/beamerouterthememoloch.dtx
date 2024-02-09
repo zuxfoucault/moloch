@@ -124,26 +124,23 @@
 %    Templates for the frame title, which is optionally underlined with a
 %    progress bar.
 %    \begin{macrocode}
-\newlength{\moloch@frametitle@padding}
-\setlength{\moloch@frametitle@padding}{2.2ex}
-\newcommand{\moloch@frametitlestrut@start}{%
-  \rule{0pt}{\moloch@frametitle@padding + \totalheightof{X}}%
-}
-\newcommand{\moloch@frametitlestrut@end}{%
-  \rule[-\moloch@frametitle@padding]{0pt}{\moloch@frametitle@padding}
-}
 \defbeamertemplate{frametitle}{plain}{%
   \nointerlineskip%
   \begin{beamercolorbox}[%
       wd=\paperwidth,%
-      sep=0pt,%
-      leftskip=\moloch@frametitle@padding,%
-      rightskip=\the\glueexpr \moloch@frametitle@padding plus 1fill\relax,%
+      sep=0.9ex,%
+      leftskip=0.9ex,%
+      rightskip=\the\glueexpr 0.9ex plus 1fill\relax,%
     ]{frametitle}%
-    \moloch@frametitlestrut@start%
-    \insertframetitle%
-    \nolinebreak%
-    \moloch@frametitlestrut@end%
+    \usebeamerfont{frametitle}%
+    \vbox{}\vskip-0.5ex%
+    \strut\insertframetitle\nolinebreak\strut\par%
+    {%
+      \ifx\insertframesubtitle\@empty%
+        \else%
+        {\usebeamerfont{framesubtitle}\vspace{-0.8ex}\usebeamercolor[fg]{framesubtitle}\strut\insertframesubtitle\strut\par}%
+      \fi
+    }%
   \end{beamercolorbox}%
 }
 \setbeamertemplate{frametitle continuation}{\romannumeral\insertcontinuationcount}
