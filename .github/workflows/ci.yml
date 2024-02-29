@@ -17,12 +17,10 @@ jobs:
             scheme-basic
             beamer
             biblatex
-            calc
             hyperref
-            keyval
             l3build
+            pgf
             pgfopts
-            tikz
       - name: document
         run: l3build doc
       - name: build
