@@ -3,6 +3,9 @@
 \title{Moloch Test Suite}
 \subtitle{A subtitle that is way to long and in fact might just need to be split across lines}
 
+\usepackage[backend=biber]{biblatex}
+\addbibresource{biblatex-examples.bib}
+
 \author[Johan]{Johan Larsson}
 \institute[LU]{Lund Univesity//Department of Statistics}
 \date{April 23, 2024}
@@ -71,10 +74,24 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}[c]
+  \frametitle{References}
+
+  Normal Text \fullcite{knuth:ct}\footfullcite{knuth:ct}\footnote{Normal Footnote Size}
+
+  \Tiny Normal Text \fullcite{knuth:ct}
+
+  And some regular referencing~\parencite{knuth:ct}.
+\end{frame}
+
 \appendix
 
 \begin{frame}{Backup slides}
   Here are some backup slides
+\end{frame}
+
+\begin{frame}[allowframebreaks]{References}
+  \printbibliography[heading=none]
 \end{frame}
 
 \end{document}
