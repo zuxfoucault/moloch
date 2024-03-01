@@ -19,6 +19,7 @@ jobs:
             biblatex
             enumitem
             fileinfo
+            hypdoc
             hyperref
             l3build
             listings
