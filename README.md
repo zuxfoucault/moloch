@@ -68,3 +68,8 @@ Also, when writing commit messages, please use the [conventional commits format]
 ## Versioning
 
 The project uses [semantic versioning](https://semver.org).
+
+## Acknowledgments
+
+Almost all of **moloch** is a result of Mathias Vogelgesang's (@matze) hard work on the
+**metropolis theme** (of which **moloch** is a fork).
