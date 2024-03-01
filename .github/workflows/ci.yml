@@ -26,6 +26,7 @@ jobs:
             parskip
             pgf
             pgfopts
+            setspace
             xurl
       - name: document
         run: l3build doc
