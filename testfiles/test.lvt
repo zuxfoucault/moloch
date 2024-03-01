@@ -1,5 +1,6 @@
 \documentclass[hyperref={draft}]{beamer}
 
 \usetheme{moloch}
+\usepackage{lmodern}
 
 \input{molochexample}
