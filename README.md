@@ -1,4 +1,4 @@
-# Moloch
+# Moloch <a href="https://ctan.org/pkg/moloch"><img src="https://github.com/jolars/moloch/raw/main/assets/moloch-logo.svg" align="right" width="140" /></a>
 
 [![CTAN](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fctan.org%2Fjson%2F2.0%2Fpkg%2Fmoloch&query=%24.version.number&logo=latex&label=CTAN)](https://ctan.org/pkg/moloch)
 [![CI](https://github.com/jolars/moloch/actions/workflows/ci.yml/badge.svg)](https://github.com/jolars/moloch/actions/workflows/ci.yml)
@@ -73,3 +73,5 @@ The project uses [semantic versioning](https://semver.org).
 
 Almost all of **moloch** is a result of Mathias Vogelgesang's (@matze) hard work on the
 **metropolis theme** (of which **moloch** is a fork).
+
+Thanks to @samcarter for the logo!
