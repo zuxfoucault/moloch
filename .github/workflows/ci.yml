@@ -17,10 +17,16 @@ jobs:
             scheme-basic
             beamer
             biblatex
+            enumitem
+            fileinfo
             hyperref
             l3build
+            listings
+            metalogo
+            parskip
             pgf
             pgfopts
+            xurl
       - name: document
         run: l3build doc
       - name: build
