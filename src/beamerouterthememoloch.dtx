@@ -82,6 +82,34 @@
 %    \end{macrocode}%
 % \end{macro}
 %
+% \subsubsection{Deprecated Options}
+%
+% These options are deprecated and will be removed in a future version.
+%
+% \begin{macro}{numbering}
+%    Adds slide numbers to the bottom right of each slide.
+%    \begin{macrocode}
+\pgfkeys{
+  /moloch/outer/numbering/.cd,
+  .is choice,
+  none/.code={%
+      \PackageWarning{moloch}{The ``numbering'' option is deprecated.
+        Use beamer's ``page number in head/foot'' template instead}%
+      \setbeamertemplate{page number in head/foot}[default]
+    },
+  counter/.code={%
+      \PackageWarning{moloch}{The ``numbering'' option is deprecated.
+        Use beamer's ``page number in head/foot'' template instead}%
+      \setbeamertemplate{page number in head/foot}[framenumber]
+    },
+  fraction/.code={%
+      \PackageWarning{moloch}{The ``numbering'' option is deprecated.
+        Use beamer's ``page number in head/foot'' template instead}%
+      \setbeamertemplate{page number in head/foot}[totalframenumber]
+    },
+}
+%    \end{macrocode}
+% \end{macro}
 %
 %
 % \subsubsection{Head and footline}
