@@ -36,6 +36,18 @@
 %
 % \subsubsection{Options}
 %
+% \begin{macro}{block}
+%    Optionally adds a light grey background to block environments like
+%    |theorem| and |example|.
+%    \begin{macrocode}
+\pgfkeys{
+  /moloch/color/block/.cd,
+  .is choice,
+  transparent/.code=\moloch@block@transparent,
+  fill/.code=\moloch@block@fill,
+}
+%    \end{macrocode}
+% \end{macro}
 %
 % \begin{macro}{colors}
 %    Provides the option to have a dark background and light foreground instead
@@ -161,9 +173,37 @@
 }
 %    \end{macrocode}
 %
-% Block environments use alerted tex and example text for the title
+% Block environments such as |theorem| and |example| have no background color
+% by default. The option |block=fill| sets a background color based on the
+% background and foreground of |normal text|. The option |block=transparent|
+% reverts the block environments to an empty background, which can be useful
+% if changing colors mid-presentation.
 %
 %    \begin{macrocode}
+\newcommand{\moloch@block@transparent}{
+  \setbeamercolor{block title}{bg=}
+  \setbeamercolor{block body}{bg=}
+  \setbeamercolor{block title alerted}{bg=}
+  \setbeamercolor{block title example}{bg=}
+}
+\newcommand{\moloch@block@fill}{
+  \setbeamercolor{block title}{%
+    bg=normal text.bg!80!fg
+  }
+  \setbeamercolor{block body}{%
+    bg=block title.bg!50!normal text.bg
+  }
+  \setbeamercolor{block title alerted}{%
+    bg=block title.bg,
+  }
+  \setbeamercolor{block title example}{%
+    bg=block title.bg,
+  }
+}
+\setbeamercolor{block title}{%
+  use=normal text,
+  fg=normal text.fg
+}
 \setbeamercolor{block title alerted}{%
   use={block title, alerted text},
   fg=alerted text.fg
@@ -172,7 +212,17 @@
   use={block title, example text},
   fg=example text.fg
 }
+\setbeamercolor{block body alerted}{use=block body, parent=block body}
+\setbeamercolor{block body example}{use=block body, parent=block body}
 %    \end{macrocode}
+%
+% Footnotes
+%
+%    \begin{macrocode}
+\setbeamercolor{footnote}{fg=normal text.fg!90}
+\setbeamercolor{footnote mark}{fg=.}
+%    \end{macrocode}
+%
 %
 % Footnotes
 %

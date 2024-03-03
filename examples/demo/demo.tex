@@ -150,21 +150,43 @@
     \end{tabular}
   \end{table}
 \end{frame}
-\begin{frame}{Blocks}
-  Three different block environments are pre-defined.
+\begin{frame}[fragile]{Blocks}
+  Three different block environments are pre-defined: \verb|block|, \verb|alertblock|,
+  and \verb|exampleblock|. They can be styled using the option
+  \verb|block|, which takes values \verb|transparent| (default, left column) and \verb|fill| (right column).
 
-  \begin{block}{Default}
-    Block content.
-  \end{block}
+  \begin{columns}[T]
+    \begin{column}{0.45\textwidth}
+      \begin{block}{Default}
+        Block content.
+      \end{block}
 
-  \begin{alertblock}{Alert}
-    Block content.
-  \end{alertblock}
+      \begin{alertblock}{Alert}
+        Block content.
+      \end{alertblock}
 
-  \begin{exampleblock}{Example}
-    Block content.
-  \end{exampleblock}
+      \begin{exampleblock}{Example}
+        Block content.
+      \end{exampleblock}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      {
+        \molochset{block=fill}
 
+        \begin{block}{Default}
+          Block content.
+        \end{block}
+
+        \begin{alertblock}{Alert}
+          Block content.
+        \end{alertblock}
+
+        \begin{exampleblock}{Example}
+          Block content.
+        \end{exampleblock}
+      }
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Math}
