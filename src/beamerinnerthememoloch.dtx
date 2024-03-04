@@ -112,9 +112,9 @@
 %    \begin{macrocode}
 \setbeamertemplate{title page}{
   \begin{minipage}[b][\paperheight]{\textwidth}
-    \ifx\inserttitlegraphic\@empty\else\usebeamertemplate*{title graphic}\fi
     \null%
     \vfill%
+    \ifx\inserttitlegraphic\@empty\else\usebeamertemplate*{title graphic}\fi
     \ifx\inserttitle\@empty\else\usebeamertemplate*{title}\fi
     \ifx\insertsubtitle\@empty\else\usebeamertemplate*{subtitle}\fi
     \usebeamertemplate*{title separator}
@@ -161,11 +161,9 @@
 %   position of other elements.
 %    \begin{macrocode}
 \setbeamertemplate{title graphic}{
-  \vbox to 0pt {
-      \vspace*{2em}
-      \inserttitlegraphic%
-    }%
-  \nointerlineskip%
+  \inserttitlegraphic%
+  \par%
+  \vspace*{1em}
 }
 %    \end{macrocode}
 % \end{macro}
@@ -177,7 +175,7 @@
   \raggedright%
   \inserttitle%
   \par%
-  \vspace*{0.5em}
+  \vspace*{0.2em}
 }
 %    \end{macrocode}
 % \end{macro}
@@ -189,7 +187,7 @@
   \raggedright%
   \insertsubtitle%
   \par%
-  \vspace*{0.5em}
+  \vspace*{0.2em}
 }
 %    \end{macrocode}
 % \end{macro}
@@ -207,6 +205,7 @@
   \end{tikzpicture}%
   \tikzexternalenable%
   \par%
+  \vspace*{0.8em}
 }
 %    \end{macrocode}
 % \end{macro}
@@ -215,9 +214,10 @@
 %   Set the author on the title page.
 %    \begin{macrocode}
 \setbeamertemplate{author}{
-  \vspace*{2em}
+  \raggedright%
   \insertauthor%
   \par%
+  \vspace*{0.5em}
 }
 %    \end{macrocode}
 % \end{macro}
@@ -226,9 +226,9 @@
 %   Set the institute on the title page.
 %    \begin{macrocode}
 \setbeamertemplate{institute}{
-  \vspace*{0.5em}
   \insertinstitute%
   \par%
+  \vspace*{1em}
 }
 %    \end{macrocode}
 % \end{macro}
@@ -238,7 +238,6 @@
 %   Set the date on the title page.
 %    \begin{macrocode}
 \setbeamertemplate{date}{
-  \vspace*{1.5em}
   \insertdate%
   \par%
 }
