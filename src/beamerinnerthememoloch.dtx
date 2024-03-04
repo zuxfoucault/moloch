@@ -118,16 +118,9 @@
     \ifx\inserttitle\@empty\else\usebeamertemplate*{title}\fi
     \ifx\insertsubtitle\@empty\else\usebeamertemplate*{subtitle}\fi
     \usebeamertemplate*{title separator}
-    %    \end{macrocode}
-    %
-    % Beamer's definition of |\insertauthor| is always nonempty, so we have
-    % to test another macro initialized by |\author{...}| to see if the user has
-    % defined an author. This solution was suggested by Enrico Gregorio in an
-    % answer to \href{https://tex.stackexchange.com/questions/241306/}{this
-    % Stack Exchange question}.
-    %
-    %    \begin{macrocode}
-    \ifx\beamer@shortauthor\@empty\else\usebeamertemplate*{author}\fi
+    \expandafter\ifblank\expandafter{\beamer@andstripped}{}{%
+      \usebeamertemplate*{author}%
+    }
     \ifx\insertinstitute\@empty\else\usebeamertemplate*{institute}\fi
     \ifx\insertdate\@empty\else\usebeamertemplate*{date}\fi
     \vfill
