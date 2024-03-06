@@ -28,7 +28,6 @@ uploadconfig = {
   bugtracker = "https://github.com/jolars/moloch/issues",
   support = "https://github.com/jolars/moloch/discussions",
   topic = "presentation",
-  update = false,
   announcement_file = "ctan_announcement.txt",
 }
 
