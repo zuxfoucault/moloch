@@ -9,7 +9,7 @@ textfiles = { "*.md", "LICENSE" }
 checkengines = { "pdftex" }
 checksuppfiles = { "*.tex" }
 
-packtdszip = true
+packtdszip = false
 
 maxprintline = 9999
 
