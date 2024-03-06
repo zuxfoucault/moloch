@@ -29,6 +29,7 @@ uploadconfig = {
   support = "https://github.com/jolars/moloch/discussions",
   topic = "presentation",
   update = false,
+  announcement_file = "ctan_announcement.txt",
 }
 
 function update_tag(file, content, tagname, tagdate)
