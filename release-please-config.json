@@ -2,7 +2,6 @@
   "packages": {
     ".": {
       "release-type": "go",
-      "bump-minor-pre-major": true,
       "extra-files": [
         "src/beamercolorthememoloch.dtx",
         "src/beamerfontthememoloch.dtx",
