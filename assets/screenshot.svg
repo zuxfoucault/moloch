@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="256.00024mm"
-   height="192mm"
-   viewBox="0 0 256.00024 192"
+   width="256.13254mm"
+   height="192.13229mm"
+   viewBox="0 0 256.13254 192.1323"
    version="1.1"
    id="svg1"
    inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.94684708"
-     inkscape:cx="266.67453"
-     inkscape:cy="358.55843"
+     inkscape:zoom="0.62009454"
+     inkscape:cx="781.33248"
+     inkscape:cy="387.84409"
      inkscape:window-width="1920"
      inkscape:window-height="1016"
      inkscape:window-x="1080"
@@ -87,7 +87,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(15.112849,-42.623984)">
+     transform="translate(15.178996,-42.557841)">
     <path
        id="path1"
        d="M -15.112849,138.62399 H 112.88727 V 42.623989 H -15.112849 Z"
@@ -362,18 +362,18 @@
     <path
        id="path17-0"
        d="M 112.88728,138.62399 H 240.8874 V 42.623987 H 112.88728 Z"
-       style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.26458333;stroke-opacity:1;stroke-dasharray:none" />
+       style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.132292;stroke-dasharray:none;stroke-opacity:1" />
     <path
        id="path17-0-0"
        d="M -15.11285,138.62399 H 112.88727 V 42.623988 H -15.11285 Z"
-       style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.132292;stroke-dasharray:none;stroke-opacity:1" />
     <path
        id="path17-0-06"
        d="M -15.112849,234.62399 H 112.88727 v -96 H -15.112849 Z"
-       style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.132292;stroke-dasharray:none;stroke-opacity:1" />
     <path
        id="path17-0-4"
        d="M 112.88728,234.62399 H 240.8874 v -96 H 112.88728 Z"
-       style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.132292;stroke-dasharray:none;stroke-opacity:1" />
   </g>
 </svg>
