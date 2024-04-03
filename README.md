@@ -6,8 +6,6 @@
 Moloch is a simple Beamer theme suitable for anyone to use. It is
 a fork of the [Metropolis Theme](https://github.com/matze/mtheme).
 
-![Screenshot](https://raw.githubusercontent.com/jolars/moloch/main/assets/screenshot.svg)
-
 The fork was created for the following reasons:
 
 - To fix some outstanding issues that had not been addressed for a long time.
@@ -15,6 +13,8 @@ The fork was created for the following reasons:
 - To strip away some features that added complexity to the code base without achieving valuable functionality for the majority of users, such as special code block designs and the pgfplots theme.
 
 Do not expect this theme to be backwards compatible with the Metropolis theme.
+
+![Screenshot](https://raw.githubusercontent.com/jolars/moloch/main/assets/screenshot.svg)
 
 ## Installation
 
