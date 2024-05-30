@@ -20,13 +20,13 @@ Do not expect this theme to be backwards compatible with the Metropolis theme.
 
 Moloch is on [CTAN](https://ctan.org/pkg/moloch), so you can install it using your favorite LaTeX package manager. For example, with `tlmgr`:
 
-```sh
+```bash
 tlmgr install moloch
 ```
 
 You can also install the theme from source, in which case you need a working LaTeX installation with `l3build` installed. Then just follow these steps:
 
-```sh
+```bash
 git clone https://github.com/jolars/moloch.git
 cd moloch
 l3build install
