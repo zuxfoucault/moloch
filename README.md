@@ -12,6 +12,8 @@ The fork was created for the following reasons:
 - To remove some of the more opinionated design choices, such as special handling of the Fira family of fonts.
 - To strip away some features that added complexity to the code base without achieving valuable functionality for the majority of users, such as special code block designs and the pgfplots theme.
 
+[Here's a blog post](https://jolars.co/blog/2024-05-30-moloch/) in which I introduce the theme and write in more detail about the changes with respect to Metropolis.
+
 Do not expect this theme to be backwards compatible with the Metropolis theme.
 
 ![Screenshot](https://raw.githubusercontent.com/jolars/moloch/main/assets/screenshot.svg)
