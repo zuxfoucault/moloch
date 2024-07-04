@@ -192,12 +192,12 @@
 \newlength{\moloch@progressinheadfoot@linewidth}
 \setlength{\moloch@progressinheadfoot@linewidth}{0.4pt}
 \setbeamertemplate{progress bar in head/foot}{
-  \nointerlineskip
+  \nointerlineskip%
   \pgfmathsetlength{\moloch@progressinheadfoot}{%
     \paperwidth * min(1,\insertframenumber/\inserttotalframenumber)%
-  }
+  }%
   \begin{beamercolorbox}[wd=\paperwidth]{progress bar in head/foot}
-    \tikzexternaldisable
+    \tikzexternaldisable%
     \begin{tikzpicture}
       \mmzUnmemoizable%
       \fill[bg]
@@ -209,7 +209,7 @@
       rectangle
       (\moloch@progressinheadfoot, \moloch@progressinheadfoot@linewidth);
     \end{tikzpicture}
-    \tikzexternalenable
+    \tikzexternalenable%
   \end{beamercolorbox}
 }
 %    \end{macrocode}

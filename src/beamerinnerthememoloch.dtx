@@ -340,8 +340,8 @@
 \setbeamertemplate{progress bar in section page}{
   \pgfmathsetlength{\moloch@progressonsectionpage}{
     \textwidth * min(1,\insertframenumber/\inserttotalframenumber)
-  }
-  \tikzexternaldisable
+  }%
+  \tikzexternaldisable%
   \begin{tikzpicture}
     \mmzUnmemoizable%
     \fill[bg]
@@ -353,7 +353,7 @@
     rectangle
     (\moloch@progressonsectionpage, \moloch@progressonsectionpage@linewidth);
   \end{tikzpicture}
-  \tikzexternalenable
+  \tikzexternalenable%
 }
 %    \end{macrocode}
 %
