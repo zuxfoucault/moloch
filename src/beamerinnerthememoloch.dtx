@@ -202,6 +202,7 @@
 \setbeamertemplate{title separator}{
   \tikzexternaldisable%
   \begin{tikzpicture}
+    \mmzUnmemoizable%
     \fill[fg] (0,0) rectangle (\textwidth, \moloch@titleseparator@linewidth);
   \end{tikzpicture}%
   \tikzexternalenable%
@@ -342,6 +343,7 @@
   }
   \tikzexternaldisable
   \begin{tikzpicture}
+    \mmzUnmemoizable%
     \fill[bg]
     (0,0)
     rectangle
