@@ -113,7 +113,7 @@
 \setbeamertemplate{title page}{
   \begin{minipage}[b][\paperheight]{\textwidth}
     \null%
-    \vfill%
+    \vfil%
     \ifx\inserttitlegraphic\@empty\else\usebeamertemplate*{title graphic}\fi
     \ifx\inserttitle\@empty\else\usebeamertemplate*{title}\fi
     \ifx\insertsubtitle\@empty\else\usebeamertemplate*{subtitle}\fi
@@ -123,7 +123,7 @@
     }
     \ifx\insertinstitute\@empty\else\usebeamertemplate*{institute}\fi
     \ifx\insertdate\@empty\else\usebeamertemplate*{date}\fi
-    \vfill
+    \vfil%
     \null
   \end{minipage}%
 }
@@ -387,11 +387,9 @@
 % \subsubsection{Footnotes}
 %    \begin{macrocode}
 \setbeamertemplate{footnote}{%
-  \parindent 0em\noindent%
-  \raggedright
-  \usebeamercolor{footnote}%
-  \hbox to 0.8em{\hfil\insertfootnotemark}%
-  \insertfootnotetext\par%
+  \parindent 0em\noindent\raggedright \usebeamercolor{footnote}\hbox to
+  0.8em{\hfil\insertfootnotemark}\insertfootnotetext%%%
+  \par%
 }
 %    \end{macrocode}
 %
