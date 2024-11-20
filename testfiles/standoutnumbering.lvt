@@ -1,3 +1,4 @@
-\documentclass{beamer}
+\documentclass[hyperref={draft}]{beamer}
 \usetheme{moloch}
-\input{molochexample}
+\usepackage{lmodern}
+\input{standoutnumbering}
