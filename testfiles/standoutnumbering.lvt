@@ -1,0 +1,3 @@
+\documentclass{beamer}
+\usetheme{moloch}
+\input{molochexample}
