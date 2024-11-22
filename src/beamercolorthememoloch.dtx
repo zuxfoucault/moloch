@@ -23,11 +23,11 @@
 %<*package>
 % ------------------------------------------------------------------------- \fi
 %
-% \subsection{\themename color theme}
+% \subsection{\themename Color Theme}
 %
 %
 %
-% \subsubsection{Package dependencies}
+% \subsubsection{Package Dependencies}
 %    \begin{macrocode}
 \RequirePackage{pgfopts}
 %    \end{macrocode}
@@ -75,7 +75,7 @@
 %
 %
 %
-% \subsubsection{Base colors}
+% \subsubsection{Base Colors}
 %
 %    \begin{macrocode}
 \definecolor{mDarkBrown}{HTML}{604c38}
@@ -86,7 +86,7 @@
 %
 %
 %
-% \subsubsection{Base styles}
+% \subsubsection{Base Styles}
 %
 % All colors in \themename are derived from the definitions of |normal text|,
 % |alerted text|, and |example text|.
@@ -115,7 +115,7 @@
 %
 %
 %
-% \subsubsection{Derived colors}
+% \subsubsection{Derived Colors}
 %
 % The titles and structural elements (e.g. |itemize| bullets) are set in the
 % same color as |normal text|. This would ideally done by setting |normal text|
@@ -127,7 +127,8 @@
 \setbeamercolor{titlelike}{use=normal text, parent=normal text}
 \setbeamercolor{author}{use=normal text, parent=normal text}
 \setbeamercolor{date}{use=normal text, parent=normal text}
-\setbeamercolor{institute}{use=normal text, fg=normal text.fg!80!normal text.bg}
+\setbeamercolor{institute}{%
+  use=normal text, fg=normal text.fg!80!normal text.bg}
 \setbeamercolor{structure}{use=normal text, fg=normal text.fg}
 %    \end{macrocode}
 %
@@ -237,7 +238,7 @@
 %
 %
 %
-% \subsubsection{Process package options}
+% \subsubsection{Process Package Options}
 %
 %    \begin{macrocode}
 \moloch@color@setdefaults

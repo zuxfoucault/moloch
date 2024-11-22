@@ -11,6 +11,9 @@
 %% --------------------------------------------------------------------------- 
 %% Copyright 2024 Johan Larsson and contributors
 %% ---------------------------------------------------------------------------
+\PassOptionsToPackage{unicode,pdfusetitle}{hyperref}
+\PassOptionsToPackage{hyphens}{xurl}
+\PassOptionsToPackage{dvipsnames}{xcolor}
 
 \documentclass{ltxdoc}
 
@@ -18,7 +21,10 @@
 \usepackage{setspace}
 \usepackage{xspace}
 \usepackage{xurl}
-\onehalfspacing
+
+\usepackage{lmodern}
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 
 \usepackage{enumitem}
 \setlist[itemize]{noitemsep}
@@ -35,8 +41,8 @@
 \lstset{%
   language=[LaTeX]{TeX},
   basicstyle=\ttfamily,
-  keywordstyle=\color{mLightBrown}\bfseries,
-  commentstyle=\color{mLightGreen},
+  keywordstyle=\color{MidnightBlue}\bfseries,
+  commentstyle=\color{Periwinkle},
   stringstyle=\color{mLightGreen},
   backgroundcolor=\color{mBackground},
   numbers=none,
@@ -58,22 +64,27 @@
   xrightmargin=0em,
   aboveskip=1em,
   belowskip=1em,
-  morekeywords={usetheme,institute,maketitle,@moloch@titleformat,%
-                plain,setbeamercolor,molochset,setsansfont,setmonofont},
+  morekeywords={
+    usetheme,
+    institute,
+    maketitle,
+    @moloch@titleformat,
+    %plain,
+    setbeamercolor,
+    molochset,
+    setsansfont,
+    setmonofont
+  },
 }
 \lstMakeShortInline|
 \usepackage{metalogo}
 
-\usepackage[colorlinks=true,
-            linkcolor=mLightBrown,
-            menucolor=mLightBrown,
-            pagecolor=mLightBrown,
-            urlcolor=mLightBrown]{hyperref}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,urlcolor=MidnightBlue]{hyperref}
 
 \newcommand{\DescribeOption}[4]{
   \DescribeMacro{#1}
   \begin{minipage}[t]{\textwidth}
-    \textit{\textbf{\textcolor{mLightGreen}{#2}}}\dotfill\,#3\par
+    \textit{\textbf{\textcolor{JungleGreen}{#2}}}\dotfill\,#3\par
     \begingroup
     \vspace{0.5em}#4\par
     \endgroup
@@ -85,16 +96,18 @@
 \def\molochversion{0.5.0} % x-release-please-version
 
 \usepackage{readprov}
-% \ReadPackageInfos{beamerthememoloch}
 
-\title{The \themename package (v\molochversion)}
+\title{The \themename Package (v\molochversion)}
 \author{Johan Larsson \and Matthias Vogelgesang\footnote{Matthias wrote the original version of this manual for the Metropolis theme, which has since been modified by Johan Larsson.}}
 \date{\today}
 
 \begin{document}
 
 \maketitle
+
+\hypersetup{linkcolor=black}
 \tableofcontents
+\hypersetup{linkcolor=MidnightBlue}
 
 \section{Introduction}
 
@@ -200,7 +213,7 @@ $ pandoc -t beamer -V theme:moloch -o output.pdf input.md
 
 \section{Customization}
 
-\subsection{Package options}
+\subsection{Package Options}
 
 The theme provides a number of options, which can be set using a key=value
 interface. The primary way to set options is to provide a comma-separated list
@@ -221,7 +234,7 @@ The list of options is structured as shown in the following example.
   A short description of the option.
 }
 
-\subsubsection{Main theme}
+\subsubsection{Main Theme}
 
 \DescribeOption{titleformat}%
 {regular, smallcaps, allsmallcaps, allcaps}
@@ -240,7 +253,7 @@ The list of options is structured as shown in the following example.
   Changes the format of ``standout'' frames (see |titleformat|, above).
 }
 
-\subsubsection{Inner theme}
+\subsubsection{Inner Theme}
 
 \DescribeOption{sectionpage}{none, simple, progressbar}{progressbar}{
   Adds a slide at the start of each section (|simple|) with an optional thin
@@ -257,7 +270,7 @@ The list of options is structured as shown in the following example.
   on the section structure of your presentation.
 }
 
-\subsubsection{Outer theme}
+\subsubsection{Outer Theme}
 
 \DescribeOption{numbering}{none, counter, fraction}{}{
   \emph{This option is deprecated and will be removed in a future version.
@@ -273,7 +286,7 @@ The list of options is structured as shown in the following example.
   (|frametitle|).
 }
 
-\subsubsection{Color theme}
+\subsubsection{Color Theme}
 
 \DescribeOption{block}{transparent, fill}{transparent}{
   Optionally adds a light grey background to block environments like |theorem|
@@ -285,7 +298,7 @@ The list of options is structured as shown in the following example.
   of the reverse.
 }
 
-\subsubsection{Font theme}
+\subsubsection{Font Theme}
 
 \DescribeMacro{titleformat title}
 \DescribeMacro{titleformat subtitle}
@@ -333,7 +346,7 @@ For low-light situations \themename it might be helpful to use the
 
 \subsection{Commands}
 
-\subsubsection{Standout frames}
+\subsubsection{Standout Frames}
 
 The \themename inner theme offers a custom frame format with large, centered
 text and an inverted background---perfect for focusing attention on
@@ -359,7 +372,7 @@ Note that title format options |allsmallcaps| and |allcaps| do not
 affect the sizes of numerals, punctuation, and math symbol, and are
 probably best avoided if your titles contain these characters.
 
-\subsection{Interactions with other color themes}
+\subsection{Interactions with Other Color Themes}
 
 \themename can be used along with any other Beamer color theme, such as
 |crane| or |seahorse|. If you wish to do this, it is usually best to include
@@ -393,7 +406,7 @@ favourite Beamer color theme. In particular, \themename does not set a
 background color for the title; this will cause issues when using color themes
 like |whale| which set a white foreground for the title.
 
-\subsection{Notes on second screen}
+\subsection{Notes on Second Screen}
 
 If you use the \verb+[show notes on second screen]+ option built in to Beamer and
 compile with \XeLaTeX, text on slides following the first section slide may
@@ -407,13 +420,13 @@ on each slide.
 \makeatletter
 \def\beamer@framenotesbegin{% at beginning of slide
      \usebeamercolor[fg]{normal text}
-      \gdef\beamer@noteitems{}%
-      \gdef\beamer@notes{}%
+     \gdef\beamer@noteitems{}%
+     \gdef\beamer@notes{}%
 }
 \makeatother
 \end{lstlisting}
 
-\subsection{Standout frames with labels}
+\subsection{Standout Frames with Labels}
 
 Because the |standout| frame option creates a group to restrict the colour
 change to a single slide, labels defined after calling |standout| will stay
@@ -429,7 +442,7 @@ To fix this problem, change the order of the keys in the frame.
 
 \begin{lstlisting}
 \begin{frame}[label=conclusion, standout]{Conclusion}
-    Awesome slide
+  Awesome slide
 \end{frame}
 \end{lstlisting}
 
@@ -445,7 +458,7 @@ solution for Org mode users, using |org-set-property|.
    :END:
 \end{lstlisting}
 
-\subsection{Standout frames with Pandoc}
+\subsection{Standout Frames with Pandoc}
 
 With Pandoc versions prior to 1.17.2 it was not possible to create standout frames
 because Pandoc only supported a specific list of frame attributes thus ignoring

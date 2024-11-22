@@ -171,7 +171,9 @@
 }
 
 \newcommand{\moloch@frametitlestrut@end}{%
-  \vphantom{\rule[-\moloch@frametitle@padding]{0pt}{\moloch@frametitle@padding}}
+  \vphantom{%
+    \rule[-\moloch@frametitle@padding]{0pt}{\moloch@frametitle@padding}%
+  }
 }
 \defbeamertemplate{frametitle}{plain}{%
   \nointerlineskip%
@@ -198,7 +200,8 @@
     \moloch@frametitlestrut@end%
   \end{beamercolorbox}%
 }
-\setbeamertemplate{frametitle continuation}{\romannumeral\insertcontinuationcount}
+\setbeamertemplate{frametitle continuation}{%
+  \romannumeral\insertcontinuationcount}
 %    \end{macrocode}
 % \end{macro}
 %

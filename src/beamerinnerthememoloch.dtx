@@ -23,7 +23,7 @@
 %<*package>
 % ------------------------------------------------------------------------- \fi
 %
-% \subsection{\themename inner theme}
+% \subsection{\themename Inner Theme}
 %
 % A |beamer| inner theme dictates the style of the frame elements traditionally
 % set in the ``body'' of each slide. These include:
@@ -38,7 +38,7 @@
 %
 %
 %
-% \subsubsection{Package dependencies}
+% \subsubsection{Package Dependencies}
 %
 %    \begin{macrocode}
 \RequirePackage{keyval}
@@ -132,7 +132,7 @@
 %
 %
 %
-% \subsubsection{Title page}
+% \subsubsection{Title Page}
 %
 % \begin{macro}{title page}
 % Template for the title page. Each element is only typset if it is defined
@@ -143,7 +143,9 @@
   \begin{minipage}[b][\paperheight]{\textwidth}
     \null%
     \vfil%
-    \ifx\inserttitlegraphic\@empty\else\usebeamertemplate*{title graphic}\fi
+    \ifx\inserttitlegraphic\@empty%
+    \else\usebeamertemplate*{title graphic}%
+    \fi
     \ifx\inserttitle\@empty\else\usebeamertemplate*{title}\fi
     \ifx\insertsubtitle\@empty\else\usebeamertemplate*{subtitle}\fi
     \usebeamertemplate*{title separator}
@@ -276,9 +278,9 @@
 % \end{macro}
 %
 %
-% \subsubsection{Section page}
+% \subsubsection{Section Page}
 %
-% \begin{macro}{section page}
+% \begin{macro}{section Page}
 %
 %   Template for the section title slide at the beginning of each section.
 %
@@ -382,13 +384,14 @@
     \fill[fg]
     (0,0)
     rectangle
-    (\moloch@progressonsectionpage, \moloch@progressonsectionpage@linewidth);
+    (\moloch@progressonsectionpage,
+    \moloch@progressonsectionpage@linewidth);
   \end{tikzpicture}%
   \tikzexternalenable%
 }
 %    \end{macrocode}
 %
-%   The above code assumes that |\insertframenumber| is less than or equal to
+%   The code above assumes that |\insertframenumber| is less than or equal to
 %   |\inserttotalframenumber|. However, this is not true on the first compile;
 %   in the absence of an |.aux| file, |\inserttotalframenumber| defaults to 1.
 %   This behaviour could cause fatal errors for long presentations, as
@@ -403,7 +406,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \subsubsection{Lists and floats}
+% \subsubsection{Lists and Floats}
 %
 %    \begin{macrocode}
 \setbeamertemplate{itemize item}{\(\bullet\)}
@@ -426,7 +429,7 @@
 %
 %
 %
-% \subsubsection{Text and spacing settings}
+% \subsubsection{Text and Spacing Settings}
 %
 %
 % By default, Beamer frames offer the |c| option to \textit{almost} vertically
@@ -448,7 +451,7 @@
 %
 %
 %
-% \subsubsection{Standout frames}
+% \subsubsection{Standout Frames}
 %
 % \themename offers a custom frame format with large, centered text and an
 % inverted background. To use it, add the key |standout| to the frame:
@@ -468,7 +471,8 @@
   \booltrue{moloch@standout}
   \begingroup
   \setkeys{beamerframe}{c}
-  \ifbool{moloch@enableStandoutNumbering}{}{\setkeys{beamerframe}{noframenumbering}}
+  \ifbool{moloch@enableStandoutNumbering}{}{%
+    \setkeys{beamerframe}{noframenumbering}}
   \ifbeamercolorempty[bg]{palette primary}{
     \setbeamercolor{background canvas}{
       use=palette primary,
@@ -522,7 +526,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \subsubsection{Process package options}
+% \subsubsection{Process Package Options}
 %
 %    \begin{macrocode}
 \moloch@inner@setdefaults
