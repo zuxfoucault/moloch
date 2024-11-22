@@ -29,6 +29,7 @@ jobs:
             pgfopts
             setspace
             xurl
+            microtype
       - name: document
         run: l3build doc
       - name: build
