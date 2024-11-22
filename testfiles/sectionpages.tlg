@@ -2343,9 +2343,3 @@ Completed box being shipped out [12]
 ....\pdfcolorstack 0 pop
 ....\pdfcolorstack 0 pop
 .\kern 0.0
-\tf@nav=\write...
-\tf@toc=\write...
-\tf@snm=\write...
-(sectionpages.aux)
-Package rerunfilecheck Info: File `sectionpages.out' has not changed.
-(rerunfilecheck)             Checksum: D2931E9029CD1D0FCD374E2E4118FE51;741.

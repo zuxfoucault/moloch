@@ -1,1 +1,4 @@
+\documentclass{beamer}
+\usetheme{moloch}
+\usepackage{lmodern}
 \input{sectionpages}
