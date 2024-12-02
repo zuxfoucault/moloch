@@ -140,12 +140,11 @@
 % space on the title slide.
 %    \begin{macrocode}
 \setbeamertemplate{title page}{
-  \begin{minipage}[b][\paperheight]{\textwidth}
+  \begin{minipage}[c][\textheight]{\textwidth}
     \null%
+    \vspace{0pt plus 1.618fil}%
     \vfil%
-    \ifx\inserttitlegraphic\@empty%
-    \else\usebeamertemplate*{title graphic}%
-    \fi
+    \ifx\inserttitlegraphic\@empty\else\usebeamertemplate*{title graphic}\fi
     \ifx\inserttitle\@empty\else\usebeamertemplate*{title}\fi
     \ifx\insertsubtitle\@empty\else\usebeamertemplate*{subtitle}\fi
     \usebeamertemplate*{title separator}
@@ -154,7 +153,7 @@
     }
     \ifx\insertinstitute\@empty\else\usebeamertemplate*{institute}\fi
     \ifx\insertdate\@empty\else\usebeamertemplate*{date}\fi
-    \vfil%
+    \vspace{0pt plus 1fil}%
     \null
   \end{minipage}%
 }
