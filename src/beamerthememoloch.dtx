@@ -141,26 +141,21 @@
 %    \end{macrocode}
 % \end{macro}
 %
+%
+% \begin{macro}{\mreducelistspacing}
+%    \begin{macrocode}
+\newcommand{\mreducelistspacing}{\vspace{-\topsep}}
+%    \end{macrocode}
+% \end{macro}
+%
+%
+%
 % \subsubsection{Process Package Options}
 %
 %    \begin{macrocode}
 \moloch@setdefaults
 \ProcessPgfOptions{/moloch}
 %    \end{macrocode}
-%
-% \subsubsection{Deprecated Functionality}
-%
-% \begin{macro}{\mreducelistspacing}
-%    \begin{macrocode}
-\newcommand{%
-  \PackageWarning{moloch}{The ``mreducelistspacing'' macro is deprecated and
-    will be removed in a future version of the package. It is no longer
-    needed since there is no paragraph spacing by default.
-  }%
-  \mreducelistspacing}{\vspace{-\topsep}
-}
-%    \end{macrocode}
-% \end{macro}
 %
 % \iffalse
 %</package>
